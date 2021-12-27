@@ -35,6 +35,16 @@ kakikubo-hasura にしてみた。
 
 - https://github.com/GomaGoma676/nextjs-hasura-basic-lesson/README.md を参照する
 
+```bash
+mkdir kakikubo-hasura
+cd kakikubo-hasura
+npx create-nest-app .
+yarn dev
+```
+
+起動することを確認する。
+以降は上記手順に譲る。
+
 # 注意書き等
 
 ## ReferenceError document is not defined 対処法
