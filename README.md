@@ -31,6 +31,10 @@ kakikubo-hasura にしてみた。
 - [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
+# NextJs のセットアップ
+
+- https://github.com/GomaGoma676/nextjs-hasura-basic-lesson/README.md を参照する
+
 # 注意書き等
 
 ## ReferenceError document is not defined 対処法
