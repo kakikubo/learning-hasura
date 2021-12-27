@@ -24,6 +24,13 @@ kakikubo-hasura にしてみた。
 
 各種操作に関しては動画を参照しながらの方が良さそうだけどまとめられたらまとめる…。
 
+# インストールする VS Code プラグイン
+
+- [ES7 React/Redux/GraphQL/React-Native snippets
+  ](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 # 注意書き等
 
 ## ReferenceError document is not defined 対処法
