@@ -304,3 +304,17 @@ https://tailwindcss.com/docs/guides/nextjs
 ```bash
 yarn add next@11.1.2
 ```
+
+## Nextjs ver11.0対応
+
+Nextjs ver11.0対応で、次のレクチャーのLayout componentで下記修正をお願いいたします。
+
+*コースのGitHubも修正済みです。
+
+1. Layout componentに Imageのimport文追加
+
+![例](https://img-c.udemycdn.com/redactor/raw/article_lecture/2021-06-17_01-21-54-3927a894436144a3c6f427769a861ba8.png)
+
+2. <img/>をNextの<Image/>表記に変更
+
+![例](https://img-c.udemycdn.com/redactor/raw/article_lecture/2021-06-17_01-12-53-c0141fd46eb152764c31c8ea13853d22.png)
