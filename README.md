@@ -10,6 +10,8 @@ https://hasura.io/cloud/
 
 github で認証を行い、heroku にも接続して DB を作成することにした。
 kakikubo-hasura にしてみた。
+[今回つくったプロジェクト kakikubo-hasura](https://cloud.hasura.io/project/240cecde-58ae-4f75-a05f-1a3fc5b098d6/console/api/api-explorer)
+
 
 # GraphQL スゲー
 
@@ -313,8 +315,14 @@ Nextjs ver11.0対応で、次のレクチャーのLayout componentで下記修�
 
 1. Layout componentに Imageのimport文追加
 
-![例](https://img-c.udemycdn.com/redactor/raw/article_lecture/2021-06-17_01-21-54-3927a894436144a3c6f427769a861ba8.png)
+```js
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+```
 
 2. <img/>をNextの<Image/>表記に変更
 
-![例](https://img-c.udemycdn.com/redactor/raw/article_lecture/2021-06-17_01-12-53-c0141fd46eb152764c31c8ea13853d22.png)
+```html
+<Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+```
