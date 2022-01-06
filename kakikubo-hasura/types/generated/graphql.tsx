@@ -2,10 +2,16 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-const defaultOptions =  {}
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
+const defaultOptions = {};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -61,7 +67,6 @@ export type Groups = {
   users_aggregate: Users_Aggregate;
 };
 
-
 /** columns and relationships of "groups" */
 export type GroupsUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -70,7 +75,6 @@ export type GroupsUsersArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "groups" */
 export type GroupsUsers_AggregateArgs = {
@@ -96,7 +100,6 @@ export type Groups_Aggregate_Fields = {
   min?: Maybe<Groups_Min_Fields>;
 };
 
-
 /** aggregate fields of "groups" */
 export type Groups_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Groups_Select_Column>>;
@@ -116,7 +119,7 @@ export type Groups_Bool_Exp = {
 /** unique or primary key constraints on table "groups" */
 export enum Groups_Constraint {
   /** unique or primary key constraint */
-  GroupsPkey = 'groups_pkey'
+  GroupsPkey = 'groups_pkey',
 }
 
 /** input type for inserting data into table "groups" */
@@ -180,7 +183,7 @@ export enum Groups_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name'
+  Name = 'name',
 }
 
 /** input type for updating data in table "groups" */
@@ -194,7 +197,7 @@ export enum Groups_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name'
+  Name = 'name',
 }
 
 /** mutation root */
@@ -250,54 +253,45 @@ export type Mutation_Root = {
   update_users_by_pk?: Maybe<Users>;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Groups_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Profile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Profiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_UsersArgs = {
   where: Users_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_GroupsArgs = {
@@ -305,13 +299,11 @@ export type Mutation_RootInsert_GroupsArgs = {
   on_conflict?: InputMaybe<Groups_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Groups_OneArgs = {
   object: Groups_Insert_Input;
   on_conflict?: InputMaybe<Groups_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Profile_UsersArgs = {
@@ -319,13 +311,11 @@ export type Mutation_RootInsert_Profile_UsersArgs = {
   on_conflict?: InputMaybe<Profile_Users_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Profile_Users_OneArgs = {
   object: Profile_Users_Insert_Input;
   on_conflict?: InputMaybe<Profile_Users_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_ProfilesArgs = {
@@ -333,13 +323,11 @@ export type Mutation_RootInsert_ProfilesArgs = {
   on_conflict?: InputMaybe<Profiles_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Profiles_OneArgs = {
   object: Profiles_Insert_Input;
   on_conflict?: InputMaybe<Profiles_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_UsersArgs = {
@@ -347,13 +335,11 @@ export type Mutation_RootInsert_UsersArgs = {
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Users_OneArgs = {
   object: Users_Insert_Input;
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_GroupsArgs = {
@@ -361,13 +347,11 @@ export type Mutation_RootUpdate_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Groups_By_PkArgs = {
   _set?: InputMaybe<Groups_Set_Input>;
   pk_columns: Groups_Pk_Columns_Input;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Profile_UsersArgs = {
@@ -375,13 +359,11 @@ export type Mutation_RootUpdate_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profile_Users_By_PkArgs = {
   _set?: InputMaybe<Profile_Users_Set_Input>;
   pk_columns: Profile_Users_Pk_Columns_Input;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_ProfilesArgs = {
@@ -389,20 +371,17 @@ export type Mutation_RootUpdate_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profiles_By_PkArgs = {
   _set?: InputMaybe<Profiles_Set_Input>;
   pk_columns: Profiles_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_UsersArgs = {
   _set?: InputMaybe<Users_Set_Input>;
   where: Users_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Users_By_PkArgs = {
@@ -423,7 +402,7 @@ export enum Order_By {
   /** in descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last'
+  DescNullsLast = 'desc_nulls_last',
 }
 
 /** columns and relationships of "profile_users" */
@@ -452,7 +431,6 @@ export type Profile_Users_Aggregate_Fields = {
   max?: Maybe<Profile_Users_Max_Fields>;
   min?: Maybe<Profile_Users_Min_Fields>;
 };
-
 
 /** aggregate fields of "profile_users" */
 export type Profile_Users_Aggregate_FieldsCountArgs = {
@@ -489,7 +467,7 @@ export type Profile_Users_Bool_Exp = {
 /** unique or primary key constraints on table "profile_users" */
 export enum Profile_Users_Constraint {
   /** unique or primary key constraint */
-  ProfileUsersPkey = 'profile_users_pkey'
+  ProfileUsersPkey = 'profile_users_pkey',
 }
 
 /** input type for inserting data into table "profile_users" */
@@ -568,7 +546,7 @@ export enum Profile_Users_Select_Column {
   /** column name */
   ProfileId = 'profile_id',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'user_id',
 }
 
 /** input type for updating data in table "profile_users" */
@@ -585,7 +563,7 @@ export enum Profile_Users_Update_Column {
   /** column name */
   ProfileId = 'profile_id',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'user_id',
 }
 
 /** columns and relationships of "profiles" */
@@ -601,7 +579,6 @@ export type Profiles = {
   user?: Maybe<Users>;
 };
 
-
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -610,7 +587,6 @@ export type ProfilesProfile_UsersArgs = {
   order_by?: InputMaybe<Array<Profile_Users_Order_By>>;
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_Users_AggregateArgs = {
@@ -636,7 +612,6 @@ export type Profiles_Aggregate_Fields = {
   min?: Maybe<Profiles_Min_Fields>;
 };
 
-
 /** aggregate fields of "profiles" */
 export type Profiles_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -657,7 +632,7 @@ export type Profiles_Bool_Exp = {
 /** unique or primary key constraints on table "profiles" */
 export enum Profiles_Constraint {
   /** unique or primary key constraint */
-  ProfilesPkey = 'profiles_pkey'
+  ProfilesPkey = 'profiles_pkey',
 }
 
 /** input type for inserting data into table "profiles" */
@@ -723,7 +698,7 @@ export enum Profiles_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Nickname = 'nickname'
+  Nickname = 'nickname',
 }
 
 /** input type for updating data in table "profiles" */
@@ -737,7 +712,7 @@ export enum Profiles_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Nickname = 'nickname'
+  Nickname = 'nickname',
 }
 
 export type Query_Root = {
@@ -768,7 +743,6 @@ export type Query_Root = {
   users_by_pk?: Maybe<Users>;
 };
 
-
 export type Query_RootGroupsArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -776,7 +750,6 @@ export type Query_RootGroupsArgs = {
   order_by?: InputMaybe<Array<Groups_Order_By>>;
   where?: InputMaybe<Groups_Bool_Exp>;
 };
-
 
 export type Query_RootGroups_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
@@ -786,11 +759,9 @@ export type Query_RootGroups_AggregateArgs = {
   where?: InputMaybe<Groups_Bool_Exp>;
 };
 
-
 export type Query_RootGroups_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -800,7 +771,6 @@ export type Query_RootProfile_UsersArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Query_RootProfile_Users_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -809,11 +779,9 @@ export type Query_RootProfile_Users_AggregateArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Query_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootProfilesArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -823,7 +791,6 @@ export type Query_RootProfilesArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Query_RootProfiles_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -832,11 +799,9 @@ export type Query_RootProfiles_AggregateArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Query_RootProfiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -846,7 +811,6 @@ export type Query_RootUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type Query_RootUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -854,7 +818,6 @@ export type Query_RootUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
-
 
 export type Query_RootUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -888,7 +851,6 @@ export type Subscription_Root = {
   users_by_pk?: Maybe<Users>;
 };
 
-
 export type Subscription_RootGroupsArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -896,7 +858,6 @@ export type Subscription_RootGroupsArgs = {
   order_by?: InputMaybe<Array<Groups_Order_By>>;
   where?: InputMaybe<Groups_Bool_Exp>;
 };
-
 
 export type Subscription_RootGroups_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
@@ -906,11 +867,9 @@ export type Subscription_RootGroups_AggregateArgs = {
   where?: InputMaybe<Groups_Bool_Exp>;
 };
 
-
 export type Subscription_RootGroups_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -920,7 +879,6 @@ export type Subscription_RootProfile_UsersArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfile_Users_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -929,11 +887,9 @@ export type Subscription_RootProfile_Users_AggregateArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootProfilesArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -943,7 +899,6 @@ export type Subscription_RootProfilesArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfiles_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -952,11 +907,9 @@ export type Subscription_RootProfiles_AggregateArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -966,7 +919,6 @@ export type Subscription_RootUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -974,7 +926,6 @@ export type Subscription_RootUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
-
 
 export type Subscription_RootUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -1011,7 +962,6 @@ export type Users = {
   profile_users_aggregate: Profile_Users_Aggregate;
 };
 
-
 /** columns and relationships of "users" */
 export type UsersProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -1020,7 +970,6 @@ export type UsersProfile_UsersArgs = {
   order_by?: InputMaybe<Array<Profile_Users_Order_By>>;
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "users" */
 export type UsersProfile_Users_AggregateArgs = {
@@ -1045,7 +994,6 @@ export type Users_Aggregate_Fields = {
   max?: Maybe<Users_Max_Fields>;
   min?: Maybe<Users_Min_Fields>;
 };
-
 
 /** aggregate fields of "users" */
 export type Users_Aggregate_FieldsCountArgs = {
@@ -1087,7 +1035,7 @@ export enum Users_Constraint {
   /** unique or primary key constraint */
   UsersPkey = 'users_pkey',
   /** unique or primary key constraint */
-  UsersProfileIdKey = 'users_profile_id_key'
+  UsersProfileIdKey = 'users_profile_id_key',
 }
 
 /** input type for inserting data into table "users" */
@@ -1191,7 +1139,7 @@ export enum Users_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  ProfileId = 'profile_id'
+  ProfileId = 'profile_id',
 }
 
 /** input type for updating data in table "users" */
@@ -1214,7 +1162,7 @@ export enum Users_Update_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  ProfileId = 'profile_id'
+  ProfileId = 'profile_id',
 }
 
 /** Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'. */
@@ -1230,55 +1178,83 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
-export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetUsersQueryVariables = Exact<{ [key: string]: never }>;
 
+export type GetUsersQuery = {
+  __typename?: 'query_root';
+  users: Array<{
+    __typename?: 'users';
+    id: any;
+    name: string;
+    created_at: any;
+  }>;
+};
 
-export type GetUsersQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: any, name: string, created_at: any }> };
+export type GetUserIdsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetUserIdsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetUserIdsQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: any }> };
+export type GetUserIdsQuery = {
+  __typename?: 'query_root';
+  users: Array<{ __typename?: 'users'; id: any }>;
+};
 
 export type GetUserByIdQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
-
-export type GetUserByIdQuery = { __typename?: 'query_root', users_by_pk?: { __typename?: 'users', id: any, name: string, created_at: any } | null | undefined };
+export type GetUserByIdQuery = {
+  __typename?: 'query_root';
+  users_by_pk?:
+    | { __typename?: 'users'; id: any; name: string; created_at: any }
+    | null
+    | undefined;
+};
 
 export type CreateUserMutationVariables = Exact<{
   name: Scalars['String'];
 }>;
 
-
-export type CreateUserMutation = { __typename?: 'mutation_root', insert_users_one?: { __typename?: 'users', id: any, name: string, created_at: any } | null | undefined };
+export type CreateUserMutation = {
+  __typename?: 'mutation_root';
+  insert_users_one?:
+    | { __typename?: 'users'; id: any; name: string; created_at: any }
+    | null
+    | undefined;
+};
 
 export type DeleteUserMutationVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
-
-export type DeleteUserMutation = { __typename?: 'mutation_root', delete_users_by_pk?: { __typename?: 'users', id: any, name: string, created_at: any } | null | undefined };
+export type DeleteUserMutation = {
+  __typename?: 'mutation_root';
+  delete_users_by_pk?:
+    | { __typename?: 'users'; id: any; name: string; created_at: any }
+    | null
+    | undefined;
+};
 
 export type UpdateUserMutationVariables = Exact<{
   id: Scalars['uuid'];
   name: Scalars['String'];
 }>;
 
-
-export type UpdateUserMutation = { __typename?: 'mutation_root', update_users_by_pk?: { __typename?: 'users', id: any, name: string, created_at: any } | null | undefined };
-
+export type UpdateUserMutation = {
+  __typename?: 'mutation_root';
+  update_users_by_pk?:
+    | { __typename?: 'users'; id: any; name: string; created_at: any }
+    | null
+    | undefined;
+};
 
 export const GetUsersDocument = gql`
-    query GetUsers {
-  users(order_by: {created_at: desc}) {
-    id
-    name
-    created_at
+  query GetUsers {
+    users(order_by: { created_at: desc }) {
+      id
+      name
+      created_at
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useGetUsersQuery__
@@ -1295,24 +1271,42 @@ export const GetUsersDocument = gql`
  *   },
  * });
  */
-export function useGetUsersQuery(baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
-      }
-export function useGetUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
-        }
-export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
-export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>;
-export type GetUsersQueryResult = Apollo.QueryResult<GetUsersQuery, GetUsersQueryVariables>;
-export const GetUserIdsDocument = gql`
-    query GetUserIds {
-  users(order_by: {created_at: desc}) {
-    id
-  }
+export function useGetUsersQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(
+    GetUsersDocument,
+    options
+  );
 }
-    `;
+export function useGetUsersLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetUsersQuery,
+    GetUsersQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
+    GetUsersDocument,
+    options
+  );
+}
+export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
+export type GetUsersLazyQueryHookResult = ReturnType<
+  typeof useGetUsersLazyQuery
+>;
+export type GetUsersQueryResult = Apollo.QueryResult<
+  GetUsersQuery,
+  GetUsersQueryVariables
+>;
+export const GetUserIdsDocument = gql`
+  query GetUserIds {
+    users(order_by: { created_at: desc }) {
+      id
+    }
+  }
+`;
 
 /**
  * __useGetUserIdsQuery__
@@ -1329,26 +1323,47 @@ export const GetUserIdsDocument = gql`
  *   },
  * });
  */
-export function useGetUserIdsQuery(baseOptions?: Apollo.QueryHookOptions<GetUserIdsQuery, GetUserIdsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(GetUserIdsDocument, options);
-      }
-export function useGetUserIdsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetUserIdsQuery, GetUserIdsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(GetUserIdsDocument, options);
-        }
-export type GetUserIdsQueryHookResult = ReturnType<typeof useGetUserIdsQuery>;
-export type GetUserIdsLazyQueryHookResult = ReturnType<typeof useGetUserIdsLazyQuery>;
-export type GetUserIdsQueryResult = Apollo.QueryResult<GetUserIdsQuery, GetUserIdsQueryVariables>;
-export const GetUserByIdDocument = gql`
-    query GetUserById($id: uuid!) {
-  users_by_pk(id: $id) {
-    id
-    name
-    created_at
-  }
+export function useGetUserIdsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetUserIdsQuery,
+    GetUserIdsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+    GetUserIdsDocument,
+    options
+  );
 }
-    `;
+export function useGetUserIdsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetUserIdsQuery,
+    GetUserIdsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+    GetUserIdsDocument,
+    options
+  );
+}
+export type GetUserIdsQueryHookResult = ReturnType<typeof useGetUserIdsQuery>;
+export type GetUserIdsLazyQueryHookResult = ReturnType<
+  typeof useGetUserIdsLazyQuery
+>;
+export type GetUserIdsQueryResult = Apollo.QueryResult<
+  GetUserIdsQuery,
+  GetUserIdsQueryVariables
+>;
+export const GetUserByIdDocument = gql`
+  query GetUserById($id: uuid!) {
+    users_by_pk(id: $id) {
+      id
+      name
+      created_at
+    }
+  }
+`;
 
 /**
  * __useGetUserByIdQuery__
@@ -1366,27 +1381,51 @@ export const GetUserByIdDocument = gql`
  *   },
  * });
  */
-export function useGetUserByIdQuery(baseOptions: Apollo.QueryHookOptions<GetUserByIdQuery, GetUserByIdQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(GetUserByIdDocument, options);
-      }
-export function useGetUserByIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetUserByIdQuery, GetUserByIdQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(GetUserByIdDocument, options);
-        }
-export type GetUserByIdQueryHookResult = ReturnType<typeof useGetUserByIdQuery>;
-export type GetUserByIdLazyQueryHookResult = ReturnType<typeof useGetUserByIdLazyQuery>;
-export type GetUserByIdQueryResult = Apollo.QueryResult<GetUserByIdQuery, GetUserByIdQueryVariables>;
-export const CreateUserDocument = gql`
-    mutation CreateUser($name: String!) {
-  insert_users_one(object: {name: $name}) {
-    id
-    name
-    created_at
-  }
+export function useGetUserByIdQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetUserByIdQuery,
+    GetUserByIdQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+    GetUserByIdDocument,
+    options
+  );
 }
-    `;
-export type CreateUserMutationFn = Apollo.MutationFunction<CreateUserMutation, CreateUserMutationVariables>;
+export function useGetUserByIdLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetUserByIdQuery,
+    GetUserByIdQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+    GetUserByIdDocument,
+    options
+  );
+}
+export type GetUserByIdQueryHookResult = ReturnType<typeof useGetUserByIdQuery>;
+export type GetUserByIdLazyQueryHookResult = ReturnType<
+  typeof useGetUserByIdLazyQuery
+>;
+export type GetUserByIdQueryResult = Apollo.QueryResult<
+  GetUserByIdQuery,
+  GetUserByIdQueryVariables
+>;
+export const CreateUserDocument = gql`
+  mutation CreateUser($name: String!) {
+    insert_users_one(object: { name: $name }) {
+      id
+      name
+      created_at
+    }
+  }
+`;
+export type CreateUserMutationFn = Apollo.MutationFunction<
+  CreateUserMutation,
+  CreateUserMutationVariables
+>;
 
 /**
  * __useCreateUserMutation__
@@ -1405,23 +1444,40 @@ export type CreateUserMutationFn = Apollo.MutationFunction<CreateUserMutation, C
  *   },
  * });
  */
-export function useCreateUserMutation(baseOptions?: Apollo.MutationHookOptions<CreateUserMutation, CreateUserMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, options);
-      }
-export type CreateUserMutationHookResult = ReturnType<typeof useCreateUserMutation>;
-export type CreateUserMutationResult = Apollo.MutationResult<CreateUserMutation>;
-export type CreateUserMutationOptions = Apollo.BaseMutationOptions<CreateUserMutation, CreateUserMutationVariables>;
-export const DeleteUserDocument = gql`
-    mutation DeleteUser($id: uuid!) {
-  delete_users_by_pk(id: $id) {
-    id
-    name
-    created_at
-  }
+export function useCreateUserMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateUserMutation,
+    CreateUserMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(
+    CreateUserDocument,
+    options
+  );
 }
-    `;
-export type DeleteUserMutationFn = Apollo.MutationFunction<DeleteUserMutation, DeleteUserMutationVariables>;
+export type CreateUserMutationHookResult = ReturnType<
+  typeof useCreateUserMutation
+>;
+export type CreateUserMutationResult =
+  Apollo.MutationResult<CreateUserMutation>;
+export type CreateUserMutationOptions = Apollo.BaseMutationOptions<
+  CreateUserMutation,
+  CreateUserMutationVariables
+>;
+export const DeleteUserDocument = gql`
+  mutation DeleteUser($id: uuid!) {
+    delete_users_by_pk(id: $id) {
+      id
+      name
+      created_at
+    }
+  }
+`;
+export type DeleteUserMutationFn = Apollo.MutationFunction<
+  DeleteUserMutation,
+  DeleteUserMutationVariables
+>;
 
 /**
  * __useDeleteUserMutation__
@@ -1440,23 +1496,40 @@ export type DeleteUserMutationFn = Apollo.MutationFunction<DeleteUserMutation, D
  *   },
  * });
  */
-export function useDeleteUserMutation(baseOptions?: Apollo.MutationHookOptions<DeleteUserMutation, DeleteUserMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<DeleteUserMutation, DeleteUserMutationVariables>(DeleteUserDocument, options);
-      }
-export type DeleteUserMutationHookResult = ReturnType<typeof useDeleteUserMutation>;
-export type DeleteUserMutationResult = Apollo.MutationResult<DeleteUserMutation>;
-export type DeleteUserMutationOptions = Apollo.BaseMutationOptions<DeleteUserMutation, DeleteUserMutationVariables>;
-export const UpdateUserDocument = gql`
-    mutation UpdateUser($id: uuid!, $name: String!) {
-  update_users_by_pk(pk_columns: {id: $id}, _set: {name: $name}) {
-    id
-    name
-    created_at
-  }
+export function useDeleteUserMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteUserMutation,
+    DeleteUserMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
+    DeleteUserDocument,
+    options
+  );
 }
-    `;
-export type UpdateUserMutationFn = Apollo.MutationFunction<UpdateUserMutation, UpdateUserMutationVariables>;
+export type DeleteUserMutationHookResult = ReturnType<
+  typeof useDeleteUserMutation
+>;
+export type DeleteUserMutationResult =
+  Apollo.MutationResult<DeleteUserMutation>;
+export type DeleteUserMutationOptions = Apollo.BaseMutationOptions<
+  DeleteUserMutation,
+  DeleteUserMutationVariables
+>;
+export const UpdateUserDocument = gql`
+  mutation UpdateUser($id: uuid!, $name: String!) {
+    update_users_by_pk(pk_columns: { id: $id }, _set: { name: $name }) {
+      id
+      name
+      created_at
+    }
+  }
+`;
+export type UpdateUserMutationFn = Apollo.MutationFunction<
+  UpdateUserMutation,
+  UpdateUserMutationVariables
+>;
 
 /**
  * __useUpdateUserMutation__
@@ -1476,10 +1549,24 @@ export type UpdateUserMutationFn = Apollo.MutationFunction<UpdateUserMutation, U
  *   },
  * });
  */
-export function useUpdateUserMutation(baseOptions?: Apollo.MutationHookOptions<UpdateUserMutation, UpdateUserMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<UpdateUserMutation, UpdateUserMutationVariables>(UpdateUserDocument, options);
-      }
-export type UpdateUserMutationHookResult = ReturnType<typeof useUpdateUserMutation>;
-export type UpdateUserMutationResult = Apollo.MutationResult<UpdateUserMutation>;
-export type UpdateUserMutationOptions = Apollo.BaseMutationOptions<UpdateUserMutation, UpdateUserMutationVariables>;
+export function useUpdateUserMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateUserMutation,
+    UpdateUserMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
+    UpdateUserDocument,
+    options
+  );
+}
+export type UpdateUserMutationHookResult = ReturnType<
+  typeof useUpdateUserMutation
+>;
+export type UpdateUserMutationResult =
+  Apollo.MutationResult<UpdateUserMutation>;
+export type UpdateUserMutationOptions = Apollo.BaseMutationOptions<
+  UpdateUserMutation,
+  UpdateUserMutationVariables
+>;
