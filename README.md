@@ -326,3 +326,21 @@ import Image from "next/image";
 ```html
 <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
 ```
+
+## `ReferenceError: setImmediate is not defined` 対処法
+
+Jest系のupdateの影響で、レクチャーのテスト実行時に2つのエラーが発生する可能性がありますので、遭遇した場合は下記手順で対処をお願い致します。
+
+### `ReferenceError: document is not defined` 対処法
+
+上述の通り(jsdom)
+
+### `ReferenceError: setImmediate is not defined`
+
+対処法:
+
+1. setimmediate パッケージのインストール
+  `yarn add setimmediate`
+2. 各テストファイルのimport部に下記importを追加
+  `import 'setimmediate'`
+![例](./2021-06-01_06-40-25-82e367904059c10d0c0396e5ddda61b4.png)
