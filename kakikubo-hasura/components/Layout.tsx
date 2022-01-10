@@ -55,7 +55,7 @@ export const Layout: VFC<Props> = ({
               </Link>
               <Link href="/hasura-ssg">
                 <a
-                  data-testid="crud-nav"
+                  data-testid="ssg-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
                   SSG+ISR(Hasura)
@@ -63,7 +63,7 @@ export const Layout: VFC<Props> = ({
               </Link>
               <Link href="/hooks-memo">
                 <a
-                  data-testid="crud-nav"
+                  data-testid="memo-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
                   custom hook + memo
