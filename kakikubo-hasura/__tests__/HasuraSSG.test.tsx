@@ -9,6 +9,8 @@ import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 
+process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql';
+
 initTestHelpers();
 
 const server = setupServer(...handlers);
