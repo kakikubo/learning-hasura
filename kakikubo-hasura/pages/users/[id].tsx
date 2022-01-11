@@ -22,7 +22,7 @@ const UserDetail: VFC<Props> = ({ user }) => {
   }
   return (
     <Layout title={user.name}>
-      <p className="text-xl font-bold"> User Deatil</p>
+      <p className="text-xl font-bold"> User Detail</p>
       <p className="m-4">
         {'ID : '}
         {user.id}
