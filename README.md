@@ -12,7 +12,24 @@ github で認証を行い、heroku にも接続して DB を作成すること�
 kakikubo-hasura にしてみた。
 [今回つくったプロジェクト kakikubo-hasura](https://cloud.hasura.io/project/240cecde-58ae-4f75-a05f-1a3fc5b098d6/console/api/api-explorer)
 
+### hasura の endpoint を保護する方法
 
+- JWT
+- Hasura admin secret
+
+いずれかを使う。 JWTでやるのが常。
+今回はHasura admin secretを使う。
+`.env.local`ファイルを作成して `NEXT_PUBLIC_HASURA_KEY="(Hasura Console で生成した値)"`
+を指定しておいて作業をすすめる事にする。このファイル自体は `.gitignore`されているのでソースには反映されない。
+そして`apolloClient.ts`に `process.env.NEXT_PUBLIC_HASURA_KEY`をheadersに`x-hasura-admin-secret`として読み込ませてあげる。
+この状態で `yarn dev`で起動してみると、
+```
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+info  - Loaded env from /Users/kakikubo/Documents/learning-hasura/kakikubo-hasura/.env.local
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+```
+
+という表示がでてきちんとリクエストが処理されるようになる。
 # GraphQL スゲー
 
 のだが、うまいこと纏められない。
@@ -344,3 +361,14 @@ Jest系のupdateの影響で、レクチャーのテスト実行時に2つのエ
 2. 各テストファイルのimport部に下記importを追加
   `import 'setimmediate'`
 ![例](./2021-06-01_06-40-25-82e367904059c10d0c0396e5ddda61b4.png)
+
+## [注意] env.test.localの読み込みエラー
+
+レクチャー32(2022/01/12時点)の`Deploy to Vercel`の、2:08辺りで作成する .env.test.localの環境変数が上手く読み込まれないケースがあるので、Home.test.tsx以外の全てのテストファイルの import 直下に 下記環境変数を定義してからyarn testを実行してください。
+```
+process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql'
+```
+
+url pathは各自のHasura URLに合わせて置き換えてください。
+
+![例](./2021-05-17_10-13-42-cf0845aeda9c91c1cd7dbf68eddf3c44.png)
