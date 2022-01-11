@@ -30,6 +30,7 @@ info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/mess
 ```
 
 という表示がでてきちんとリクエストが処理されるようになる。
+`apolloClient.ts`で指定されているURLも`process.env.NEXT_PUBLIC_HASURA_URL`を`.env.local`に指定してそこから取得するように改修する。
 # GraphQL スゲー
 
 のだが、うまいこと纏められない。
