@@ -81,7 +81,7 @@ export const Layout: VFC<Props> = ({
           className="flex items-center"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferer"
+          rel="noopener noreferrer"
         >
           Power by{' '}
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
