@@ -12,6 +12,15 @@ github で認証を行い、heroku にも接続して DB を作成すること�
 kakikubo-hasura にしてみた。
 [今回つくったプロジェクト kakikubo-hasura](https://cloud.hasura.io/project/240cecde-58ae-4f75-a05f-1a3fc5b098d6/console/api/api-explorer)
 
+## 開発環境の構築
+
+`.env.local`ファイルを作成し、以下のような内容を記載しておく
+
+```
+NEXT_PUBLIC_HASURA_KEY=hasura cloud上のAdmin Secret
+NEXT_PUBLIC_HASURA_URL=hasura cloud上のGraphQL API
+```
+
 ### hasura の endpoint を保護する方法
 
 - JWT
