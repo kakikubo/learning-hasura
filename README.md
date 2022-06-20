@@ -394,3 +394,11 @@ process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql'
 url path は各自の Hasura URL に合わせて置き換えてください。
 
 ![例](./2021-05-17_10-13-42-cf0845aeda9c91c1cd7dbf68eddf3c44.png)
+
+## 2022/06/17 追記
+
+[Jest v28に上げるためにやったこと](https://zenn.dev/keita_hino/articles/488d31e8c4a240)
+
+### `jsdomがデフォルトではインストールされなくなった`
+
+Vercelでも[エラーになってしまっていた。](https://vercel.com/kakikubo/learning-hasura/BRNVXK2pnsDGmEi6THmkKHd7Eanm)
