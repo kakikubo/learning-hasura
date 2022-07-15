@@ -30,7 +30,7 @@
     "@graphql-codegen/typescript-operations": "2.4.2",
     "@graphql-codegen/typescript-react-apollo": "3.2.16",
     "@testing-library/dom": "^8.16.0",
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.2.1",
     "@types/jest": "^28.1.4",
