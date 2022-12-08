@@ -27,7 +27,7 @@
     "@babel/core": "^7.18.10",
     "@graphql-codegen/cli": "2.8.1",
     "@graphql-codegen/typescript": "^2.5.0",
-    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-operations": "2.5.10",
     "@graphql-codegen/typescript-react-apollo": "3.3.3",
     "@testing-library/dom": "^8.18.1",
     "@testing-library/jest-dom": "^5.16.5",
