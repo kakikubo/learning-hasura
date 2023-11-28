@@ -2,7 +2,7 @@
   "name": "kakikubo-hasura",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
