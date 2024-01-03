@@ -2,11 +2,11 @@
 
 ## 教材のリポジトリ
 
-- https://github.com/GomaGoma676/nextjs-hasura-basic-lesson
+- <https://github.com/GomaGoma676/nextjs-hasura-basic-lesson>
 
 ## hasura
 
-https://hasura.io/cloud/
+<https://hasura.io/cloud/>
 
 github で認証を行い、heroku にも接続して DB を作成することにした。
 kakikubo-hasura にしてみた。
@@ -16,7 +16,7 @@ kakikubo-hasura にしてみた。
 
 `.env.local`ファイルを作成し、以下のような内容を記載しておく
 
-```
+```bash
 NEXT_PUBLIC_HASURA_KEY=hasura cloud上のAdmin Secret
 NEXT_PUBLIC_HASURA_URL=hasura cloud上のGraphQL API
 ```
@@ -33,7 +33,7 @@ NEXT_PUBLIC_HASURA_URL=hasura cloud上のGraphQL API
 そして`apolloClient.ts`に `process.env.NEXT_PUBLIC_HASURA_KEY`を headers に`x-hasura-admin-secret`として読み込ませてあげる。
 この状態で `yarn dev`で起動してみると、
 
-```
+```bash
 ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 info  - Loaded env from /Users/kakikubo/Documents/learning-hasura/kakikubo-hasura/.env.local
 info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
