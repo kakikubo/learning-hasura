@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { ChevronDoubleLeftIcon } from '@heroicons/react/solid';
+import { ChevronDoubleLeftIcon } from '@heroicons/react/20/solid';
 import { initializeApollo } from '../../lib/apolloClient';
 import { GET_USERIDS, GET_USERBY_ID } from '../../queries/queries';
 import {
