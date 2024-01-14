@@ -21,7 +21,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "setimmediate": "^1.0.5",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "undici": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -53,6 +54,14 @@
     ],
     "moduleNameMapper": {
       "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "setupFiles": [
+      "./jest.polyfills.js"
+    ],
+    "testEnvironmentOptions": {
+      "customExportConditions": [
+        ""
+      ]
     }
   }
 }
