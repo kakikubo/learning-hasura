@@ -27,7 +27,7 @@ afterAll(() => {
   server.close();
 });
 
-xdescribe('Navigation Test Cases', () => {
+describe('Navigation Test Cases', () => {
   it('Should route to selected page in navbar', async () => {
     const { page } = await getPage({
       route: '/',
