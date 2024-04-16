@@ -1,6 +1,9 @@
 {
   "name": "kakikubo-hasura",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
     "build": "next build",
