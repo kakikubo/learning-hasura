@@ -50,6 +50,9 @@
     "typescript": "^5.0.0"
   },
   "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ],
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
       "<rootDir>/node_modules/"
