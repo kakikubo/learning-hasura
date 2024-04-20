@@ -13,13 +13,12 @@
     "gen-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.8",
-    "@apollo/react-hooks": "^4.0.0",
+    "@apollo/client": "^3.9.11",
     "@heroicons/react": "^2.1.1",
     "autoprefixer": "^10.4.16",
     "cross-fetch": "^4.0.0",
     "graphql": "^16.8.1",
-    "next": "11.1.2",
+    "next": "^14.2.2",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
