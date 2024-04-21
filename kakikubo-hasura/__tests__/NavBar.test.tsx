@@ -1,18 +1,41 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { getPage, initTestHelpers } from 'next-page-tester';
 import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
+import Home from '../pages/index';
+
+// Jestに必要なモックをセットアップします
+// jest.mock('next/router', () => ({
+//   useRouter() {
+//     return {
+//       route: '/',
+//       pathname: '',
+//       query: '',
+//       asPath: '',
+//       push: jest.fn(), // 画面遷移をシミュレートするためのモック関数
+//     };
+//   },
+// }));
+jest.mock('next/link', () => {
+  return ({ children }) => {
+    return children;
+  };
+});
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      push: jest.fn(), // push関数のモック
+    };
+  },
+}));
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';
-
-initTestHelpers();
 
 const server = setupServer(...handlers);
 
@@ -21,7 +44,6 @@ beforeAll(() => {
 });
 afterEach(() => {
   server.resetHandlers();
-  cleanup();
 });
 afterAll(() => {
   server.close();
@@ -29,10 +51,8 @@ afterAll(() => {
 
 xdescribe('Navigation Test Cases', () => {
   it('Should route to selected page in navbar', async () => {
-    const { page } = await getPage({
-      route: '/',
-    });
-    render(page);
+    render(<Home />);
+
     expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('makevar-nav'));
     expect(await screen.findByText('makeVar')).toBeInTheDocument();
