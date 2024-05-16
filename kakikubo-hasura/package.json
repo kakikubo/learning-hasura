@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --env=jsdom --verbose",
+    "test": "NODE_ENV=test jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
