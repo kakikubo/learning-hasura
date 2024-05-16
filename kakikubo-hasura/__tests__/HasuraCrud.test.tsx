@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
@@ -9,6 +9,7 @@ import 'setimmediate';
 import HasuraCRUD from '../pages/hasura-crud';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_USERS } from '../queries/queries';
+import { act } from 'react-dom/test-utils';
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';
@@ -63,11 +64,13 @@ describe('Hasura CRUD Test Cases', () => {
       },
     ];
 
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <HasuraCRUD />
-      </MockedProvider>
-    );
+    await act(async () => {
+      render(
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <HasuraCRUD />
+        </MockedProvider>
+      );
+    });
     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument();
     expect(await screen.findByText('test user1')).toBeInTheDocument();
     expect(
