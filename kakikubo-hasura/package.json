@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --env=jsdom --verbose",
+    "test": "NODE_ENV=test jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
@@ -28,6 +28,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/typescript": "^4.0.6",
     "@graphql-codegen/typescript-operations": "^4.2.0",
