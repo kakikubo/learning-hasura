@@ -1426,9 +1426,9 @@
     tslib "~2.6.0"
 
 "@graphql-codegen/schema-ast@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/schema-ast/-/schema-ast-4.0.2.tgz#aeaa104e4555cca73a058f0a9350b4b0e290b377"
-  integrity sha512-5mVAOQQK3Oz7EtMl/l3vOQdc2aYClUzVDHHkMvZlunc+KlGgl81j8TLa+X7ANIllqU4fUEsQU3lJmk4hXP6K7Q==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/schema-ast/-/schema-ast-4.1.0.tgz#a1e71f99346495b9272161a9ed07756e82648726"
+  integrity sha512-kZVn0z+th9SvqxfKYgztA6PM7mhnSZaj4fiuBWvMTqA+QqQ9BBed6Pz41KuD/jr0gJtnlr2A4++/0VlpVbCTmQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^5.0.3"
     "@graphql-tools/utils" "^10.0.0"
@@ -1446,13 +1446,13 @@
     tslib "~2.6.0"
 
 "@graphql-codegen/typescript-operations@^4.2.0":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-4.2.2.tgz#0f4bb51804e139f2088b71aff7258175ae099d07"
-  integrity sha512-8FJHIAubM4r9ElLuuDAKhdOjainSwRHEmGIrtEgEwHARKhMk1Ttj6bpOQDisYlbDl4ZTHWEJCdNa9o9rgcl+9g==
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-4.2.3.tgz#794e279f54f88f2df56eee6d045d16766ec06008"
+  integrity sha512-6z7avSSOr03l5SyKbeDs7MzRyGwnQFSCqQm8Om5wIuoIgXVu2gXRmcJAY/I7SLdAy9xbF4Sho7XNqieFM2CAFQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^5.0.4"
-    "@graphql-codegen/typescript" "^4.0.8"
-    "@graphql-codegen/visitor-plugin-common" "5.3.0"
+    "@graphql-codegen/typescript" "^4.0.9"
+    "@graphql-codegen/visitor-plugin-common" "5.3.1"
     auto-bind "~4.0.0"
     tslib "~2.6.0"
 
@@ -1467,14 +1467,14 @@
     change-case-all "1.0.15"
     tslib "~2.6.0"
 
-"@graphql-codegen/typescript@^4.0.6", "@graphql-codegen/typescript@^4.0.8":
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-4.0.8.tgz#ff0d5a0a86a002ac356e23e26b7079c6087e8ec5"
-  integrity sha512-kYS3SjGNnC9vgFS8N3vaxzRFkdXX2umMi1SOpHjMFCPjMe8NR0uNdW4nP9T0YEq+DvWgj+XojjpFy2oyz9q12w==
+"@graphql-codegen/typescript@^4.0.6", "@graphql-codegen/typescript@^4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-4.0.9.tgz#25b7999b665d86a6459f90dd22c7ddec12495fdd"
+  integrity sha512-0O35DMR4d/ctuHL1Zo6mRUUzp0BoszKfeWsa6sCm/g70+S98+hEfTwZNDkQHylLxapiyjssF9uw/F+sXqejqLw==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^5.0.4"
     "@graphql-codegen/schema-ast" "^4.0.2"
-    "@graphql-codegen/visitor-plugin-common" "5.3.0"
+    "@graphql-codegen/visitor-plugin-common" "5.3.1"
     auto-bind "~4.0.0"
     tslib "~2.6.0"
 
@@ -1510,10 +1510,10 @@
     parse-filepath "^1.0.2"
     tslib "~2.6.0"
 
-"@graphql-codegen/visitor-plugin-common@5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-5.3.0.tgz#c9e23e53d06630dbe724e9194c0884b4bb5aae41"
-  integrity sha512-+kUk7gRD/72Wfkjd7D96Lonh9k4lFw9d3O1+I07Jyja4QN9H42kdFEO0hM/b4Q9lLkI1yJ66Oym7lWz2Ikj3aw==
+"@graphql-codegen/visitor-plugin-common@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-5.3.1.tgz#d3fb5f6336cbef58e2960471422da3f3caff7f17"
+  integrity sha512-MktoBdNZhSmugiDjmFl1z6rEUUaqyxtFJYWnDilE7onkPgyw//O0M+TuPBJPBWdyV6J2ond0Hdqtq+rkghgSIQ==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^5.0.4"
     "@graphql-tools/optimize" "^2.0.0"
@@ -1796,9 +1796,9 @@
     ws "^8.12.0"
 
 "@graphql-tools/utils@^10.0.0", "@graphql-tools/utils@^10.0.13":
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.2.2.tgz#6477295fae051ffb5d6c28253aa6d8a449d4a820"
-  integrity sha512-ueoplzHIgFfxhFrF4Mf/niU/tYHuO6Uekm2nCYU72qpI+7Hn9dA2/o5XOBvFXDk27Lp5VSvQY5WfmRbqwVxaYQ==
+  version "10.2.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.2.3.tgz#262359e230e8e16fd15b996217ab4cac8ce0d5d3"
+  integrity sha512-j7x0sO0VtWVhD3FubyY42abx+g61/at5W5Y3DSOckPkBo7yVjkcnAsXoB4jiUnznhGme/o+uX5VgA8HrjyR5ZQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     cross-inspect "1.0.0"
@@ -3243,7 +3243,7 @@ caniuse-lite@^1.0.30001579:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001632.tgz#964207b7cba5851701afb4c8afaf1448db3884b6"
   integrity sha512-udx3o7yHJfUxMLkGohMlVHCvFvWmirKh9JAH/d7WOLPetlH+LTL5cocMZ0t7oZx/mdlOWXti97xLZWc8uURRHg==
 
-caniuse-lite@^1.0.30001587, caniuse-lite@^1.0.30001629:
+caniuse-lite@^1.0.30001587:
   version "1.0.30001638"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001638.tgz#598e1f0c2ac36f37ebc3f5b8887a32ca558e5d56"
   integrity sha512-5SuJUJ7cZnhPpeLHaH0c/HPAnAHZvS6ElWyHK9GSIbVOQABLzowiI2pjmpvZ1WEbkyz46iFd4UXlOHR5SqgfMQ==
@@ -3252,6 +3252,11 @@ caniuse-lite@^1.0.30001599:
   version "1.0.30001611"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001611.tgz#4dbe78935b65851c2d2df1868af39f709a93a96e"
   integrity sha512-19NuN1/3PjA3QI8Eki55N8my4LzfkMCRLgCVfrl/slbSAchQfV0+GwjPrK3rq37As4UCLlM/DHajbKkAqbv92Q==
+
+caniuse-lite@^1.0.30001629:
+  version "1.0.30001639"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001639.tgz#972b3a6adeacdd8f46af5fc7f771e9639f6c1521"
+  integrity sha512-eFHflNTBIlFwP2AIKaYuBQN/apnUoKNhBdza8ZnW/h2di4LCZ4xFqYlxUxo+LQ76KFI1PGcC1QDxMbxTZpSCAg==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -3826,10 +3831,15 @@ eastasianwidth@^0.2.0:
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
-electron-to-chromium@^1.4.668, electron-to-chromium@^1.4.796:
+electron-to-chromium@^1.4.668:
   version "1.4.814"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.814.tgz#176535a0b899c9c473464502ab77576aa8bb1cbe"
   integrity sha512-GVulpHjFu1Y9ZvikvbArHmAhZXtm3wHlpjTMcXNGKl4IQ4jMQjlnz8yMQYYqdLHKi/jEL2+CBC2akWVCoIGUdw==
+
+electron-to-chromium@^1.4.796:
+  version "1.4.816"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.816.tgz#3624649d1e7fde5cdbadf59d31a524245d8ee85f"
+  integrity sha512-EKH5X5oqC6hLmiS7/vYtZHZFTNdhsYG5NVPRN6Yn0kQHNBlT59+xSM8HBy66P5fxWpKgZbPqb+diC64ng295Jw==
 
 emittery@^0.13.1:
   version "0.13.1"
