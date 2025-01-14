@@ -21,9 +21,9 @@
     "@jridgewell/trace-mapping" "^0.3.24"
 
 "@apollo/client@^3.10.3":
-  version "3.12.5"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.12.5.tgz#adfe168b8b0f635ca55c950eaa982b5b8b97bf15"
-  integrity sha512-lOE2TlHx1el4rHs8vaTE4IroyIO9/PD2w598YYiDahF0XSMDdsXMrTpOVh+FuQ6tZ+DXT+hsaMlilZqcFRgu+A==
+  version "3.12.6"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.12.6.tgz#06172e0f25a3279f3f4f8fd895c186b8bbd7cdfd"
+  integrity sha512-MOEtkojZagMKB7nxlwQ426eaBYwEs/Xfn+JeLOd81wv6j7toKo57eEGAbJdZwyXGRgtiqDkX5gx3EzE7qtarXA==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/caches" "^1.0.0"
@@ -7122,9 +7122,9 @@ resolve@^2.0.0-next.5:
     supports-preserve-symlinks-flag "^1.0.0"
 
 response-iterator@^0.2.6:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/response-iterator/-/response-iterator-0.2.11.tgz#6d3e4f12d2e212f28bc742bc639a37939a4483ca"
-  integrity sha512-5tdhcAeGMSyM0/FoxAYjoOxQZ2tRR2H/S/t6kGRXu6iiWcGY5UnZgkVANbTwBVUSGqWu0ADctmoi6lOCIF8uKQ==
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/response-iterator/-/response-iterator-0.2.14.tgz#e1508ffb19c23cff12394791f4ea8900093d245f"
+  integrity sha512-7pCvicgdm0piq2LDNW+WhLtYvGwUb/dGmcY36jZjzE3iE4UnH5QaluBHkiVDOj6DqZTwSmUI+s9hn00+pbiLnA==
 
 restore-cursor@^3.1.0:
   version "3.1.0"
