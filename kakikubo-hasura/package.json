@@ -4,7 +4,6 @@
   "engines": {
     "node": ">=20.9.0"
   },
-  "packageManager": "pnpm@9.15.3",
   "scripts": {
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
     "build": "next build",
