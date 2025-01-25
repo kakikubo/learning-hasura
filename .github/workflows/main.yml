@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: '20'
       - name: Install Dependencies
-        run: yarn install
+        run: pnpm install
         working-directory: ./kakikubo-hasura
       - name: Run test
-        run: yarn test
+        run: pnpm test
         working-directory: ./kakikubo-hasura

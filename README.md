@@ -31,7 +31,7 @@ NEXT_PUBLIC_HASURA_URL=hasura cloud上のGraphQL API
 `.env.local`ファイルを作成して `NEXT_PUBLIC_HASURA_KEY="(Hasura Console で生成した値)"`
 を指定しておいて作業をすすめる事にする。このファイル自体は `.gitignore`されているのでソースには反映されない。
 そして`apolloClient.ts`に `process.env.NEXT_PUBLIC_HASURA_KEY`を headers に`x-hasura-admin-secret`として読み込ませてあげる。
-この状態で `yarn dev`で起動してみると、
+この状態で `pnpm dev`で起動してみると、
 
 ```bash
 ready - started server on 0.0.0.0:3000, url: http://localhost:3000
@@ -79,18 +79,18 @@ mkdir kakikubo-hasura
 cd kakikubo-hasura
 ```
 
-### 1-1. yarn install \*インストールしていない場合
+### 1-1. pnpm install \*インストールしていない場合
 
 ```bash
-npm install --global yarn
-yarn --version
+npm install --global pnpm
+pnpm --version
 ```
 
 ### 1-2. create-next-app
 
 ```
 npx create-next-app .
-yarn dev
+pnpm dev
 ```
 
 起動することを確認する。
@@ -100,13 +100,13 @@ yarn dev
 ### 1-3. Apollo Client + heroicons + cross-fetch のインストール
 
 ```
-yarn add @apollo/client graphql @apollo/react-hooks cross-fetch @heroicons/react
+pnpm add @apollo/client graphql @apollo/react-hooks cross-fetch @heroicons/react
 ```
 
 ### 1-4. React-Testing-Library + MSW + next-page-tester のインストール
 
 ```
-yarn add -D msw@0.35.0 next-page-tester jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom babel-jest @babel/core @testing-library/user-event jest-css-modules
+pnpm add -D msw@0.35.0 next-page-tester jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom babel-jest @babel/core @testing-library/user-event jest-css-modules
 ```
 
 ### 1-5. Project folder 直下に".babelrc"ファイルを作成して下記設定を追加
@@ -169,13 +169,13 @@ touch tsconfig.json
 ### 2-2. 必要 module のインストール
 
 ```
-yarn add -D typescript @types/react @types/node
+pnpm add -D typescript @types/react @types/node
 ```
 
 ### 2-3. 開発 server 起動
 
 ```
-yarn dev
+pnpm dev
 ```
 
 ### 2-4. \_app.js, index.js -> tsx へ拡張子変更
@@ -199,7 +199,7 @@ https://tailwindcss.com/docs/guides/nextjs
 ### 3-1. 必要 module のインストール
 
 ```
-yarn add tailwindcss@latest postcss@latest autoprefixer@latest
+pnpm add tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
 ### 3-2. tailwind.config.js, postcss.config.js の生成
@@ -246,7 +246,7 @@ it('Should render title text', () => {
 })
 ```
 
-### 4-2. yarn test -> テストが PASS するか確認
+### 4-2. pnpm test -> テストが PASS するか確認
 
 ```
  PASS  __tests__/Home.test.tsx
@@ -263,9 +263,9 @@ Time:        1.728 s, estimated 2 s
 ### 5-1. install modules + init
 
 ```
-% yarn add -D @graphql-codegen/cli
-% yarn graphql-codegen init
-yarn run v1.22.11
+% pnpm add -D @graphql-codegen/cli
+% pnpm graphql-codegen init
+pnpm run v1.22.11
 $ /Users/kakikubo/Documents/learning-hasura/kakikubo-hasura/node_modules/.bin/graphql-codegen init
 (node:34883) ExperimentalWarning: stream/web is an experimental feature. This feature could change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
@@ -284,8 +284,8 @@ Cs)
 ? What script in package.json should run the codegen? gen-types
 .
 .
-% yarn
-% yarn add -D @graphql-codegen/typescript
+% pnpm
+% pnpm add -D @graphql-codegen/typescript
 ```
 
 ### 5-2. add queries in queries/queries.ts file
@@ -293,7 +293,7 @@ Cs)
 ### 5-3. generate types automatically
 
 ```
-yarn gen-types
+pnpm gen-types
 ```
 
 # 注意書き等
@@ -342,7 +342,7 @@ https://tailwindcss.com/docs/guides/nextjs
 現状(2021/11/3)、セクション 4 で使用する next-page-tester が Nextjs ver12 に対応していない為、下記コマンドを実行して、Next の version を 11 系に変更してから講義を進めてください 🙇‍♂️
 
 ```bash
-yarn add next@11.1.2
+pnpm add next@11.1.2
 ```
 
 ## Nextjs ver11.0 対応
@@ -378,14 +378,14 @@ Jest 系の update の影響で、レクチャーのテスト実行時に 2 つ�
 対処法:
 
 1. setimmediate パッケージのインストール
-   `yarn add setimmediate`
+   `pnpm add setimmediate`
 2. 各テストファイルの import 部に下記 import を追加
    `import 'setimmediate'`
    ![例](./2021-06-01_06-40-25-82e367904059c10d0c0396e5ddda61b4.png)
 
 ## [注意] env.test.local の読み込みエラー
 
-レクチャー 32(2022/01/12 時点)の`Deploy to Vercel`の、2:08 辺りで作成する .env.test.local の環境変数が上手く読み込まれないケースがあるので、Home.test.tsx 以外の全てのテストファイルの import 直下に 下記環境変数を定義してから yarn test を実行してください。
+レクチャー 32(2022/01/12 時点)の`Deploy to Vercel`の、2:08 辺りで作成する .env.test.local の環境変数が上手く読み込まれないケースがあるので、Home.test.tsx 以外の全てのテストファイルの import 直下に 下記環境変数を定義してから pnpm test を実行してください。
 
 ```
 process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql'
