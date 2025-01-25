@@ -5,12 +5,12 @@
     "node": ">=20.9.0"
   },
   "scripts": {
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "NODE_ENV=test jest --env=jsdom --verbose",
-    "gen-types": "graphql-codegen --config codegen.yml"
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && pnpm dev",
+    "build": "pnpm build",
+    "start": "pnpm start",
+    "lint": "pnpm lint",
+    "test": "NODE_ENV=test pnpm jest --env=jsdom --verbose",
+    "gen-types": "pnpm graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@apollo/client": "^3.10.3",
