@@ -10,17 +10,6 @@ import 'setimmediate';
 import Home from '../pages/index';
 
 // Jestに必要なモックをセットアップします
-// jest.mock('next/router', () => ({
-//   useRouter() {
-//     return {
-//       route: '/',
-//       pathname: '',
-//       query: '',
-//       asPath: '',
-//       push: jest.fn(), // 画面遷移をシミュレートするためのモック関数
-//     };
-//   },
-// }));
 jest.mock('next/link', () => {
   return ({ children }) => {
     return children;
@@ -49,7 +38,7 @@ afterAll(() => {
   server.close();
 });
 
-xdescribe('Navigation Test Cases', () => {
+describe('Navigation Test Cases', () => {
   it('Should route to selected page in navbar', async () => {
     render(<Home />);
 
@@ -57,14 +46,15 @@ xdescribe('Navigation Test Cases', () => {
     userEvent.click(screen.getByTestId('makevar-nav'));
     expect(await screen.findByText('makeVar')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('fetchpolicy-nav'));
-    expect(await screen.findByText('Hasura main page')).toBeInTheDocument();
+    console.log(screen.debug()); // クリック後のページ内容をログに出力
+    expect(await screen.findByText('fetchPolicy(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('crud-nav'));
-    expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument();
+    expect(await screen.findByText('CRUD(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('ssg-nav'));
-    expect(await screen.findByText('SSG+ISR')).toBeInTheDocument();
+    expect(await screen.findByText('SSG+ISR(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('memo-nav'));
     expect(
-      await screen.findByText('Custom Hook + useCallback + memo')
+      await screen.findByText('custom hook + memo')
     ).toBeInTheDocument();
     userEvent.click(screen.getByTestId('home-nav'));
     expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument();
