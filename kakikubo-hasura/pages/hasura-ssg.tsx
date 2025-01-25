@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { initializeApollo } from '../lib/apolloClient';
@@ -11,7 +11,7 @@ interface Props {
     __typename?: 'users';
   } & Pick<Users, 'id' | 'name' | 'created_at'>)[];
 }
-const HasuraSSG: VFC<Props> = ({ users }) => {
+const HasuraSSG: FC<Props> = ({ users }) => {
   return (
     <Layout title="Hasura SSG">
       <p className="mb-3 font-bold">SSG+ISR</p>

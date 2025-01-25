@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { useCreateForm } from '../hooks/useCreateForm';
 import { Child } from './Child';
 
-export const CreateUser: VFC = () => {
+export const CreateUser: FC = () => {
   const {
     text,
     handleSubmit,

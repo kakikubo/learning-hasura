@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { ChevronDoubleLeftIcon } from '@heroicons/react/20/solid';
@@ -16,7 +16,7 @@ interface Props {
   } & Pick<Users, 'id' | 'name' | 'created_at'>;
 }
 
-const UserDetail: VFC<Props> = ({ user }) => {
+const UserDetail: FC<Props> = ({ user }) => {
   if (!user) {
     return <Layout title="loading">Loading...</Layout>;
   }
