@@ -22,7 +22,5 @@ jobs:
           node-version: '20'
       - name: Install Dependencies
         run: yarn install
-        working-directory: ./kakikubo-hasura
       - name: Run test
         run: yarn test
-        working-directory: ./kakikubo-hasura
