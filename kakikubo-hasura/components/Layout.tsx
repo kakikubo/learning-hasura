@@ -1,4 +1,4 @@
-import { ReactNode, VFC } from 'react';
+import { ReactNode, FC } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,7 +8,7 @@ interface Props {
   title: string;
 }
 
-export const Layout: VFC<Props> = ({
+export const Layout: FC<Props> = ({
   children,
   title = 'Welcome to Nextjs',
 }) => {

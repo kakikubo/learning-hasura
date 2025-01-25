@@ -1,11 +1,11 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { GET_USERS } from '../queries/queries';
 import { GetUsersQuery, Users_Constraint } from '../types/generated/graphql';
 import { Layout } from '../components/Layout';
 
-const FetchMain: VFC = () => {
+const FetchMain: FC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     // fetchPolicy: 'network-only',
     fetchPolicy: 'cache-and-network',

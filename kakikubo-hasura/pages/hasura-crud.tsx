@@ -1,4 +1,4 @@
-import { VFC, useState, FormEvent } from 'react';
+import { FC, useState, FormEvent } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import {
   GET_USERS,
@@ -15,7 +15,7 @@ import {
 import { Layout } from '../components/Layout';
 import { UserItem } from '../components/UserItem';
 
-const HasuraCRUD: VFC = () => {
+const HasuraCRUD: FC = () => {
   const [editedUser, setEditedUser] = useState({ id: '', name: '' });
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     fetchPolicy: 'cache-and-network',
