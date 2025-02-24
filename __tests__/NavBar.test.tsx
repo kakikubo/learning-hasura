@@ -46,16 +46,14 @@ describe('Navigation Test Cases', () => {
     userEvent.click(screen.getByTestId('makevar-nav'));
     expect(await screen.findByText('makeVar')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('fetchpolicy-nav'));
-    console.log(screen.debug()); // クリック後のページ内容をログに出力
+    // console.log(screen.debug()); // クリック後のページ内容をログに出力
     expect(await screen.findByText('fetchPolicy(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('crud-nav'));
     expect(await screen.findByText('CRUD(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('ssg-nav'));
     expect(await screen.findByText('SSG+ISR(Hasura)')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('memo-nav'));
-    expect(
-      await screen.findByText('custom hook + memo')
-    ).toBeInTheDocument();
+    expect(await screen.findByText('custom hook + memo')).toBeInTheDocument();
     userEvent.click(screen.getByTestId('home-nav'));
     expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument();
   });
