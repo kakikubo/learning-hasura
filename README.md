@@ -93,7 +93,7 @@ pnpm dev
 
 起動することを確認する。
 
-#### Node.js version 10.13 以降が必要です。 -> ターミナル `node -v`で ver 確認出来ます。
+#### Node.js version 10.13 以降が必要です。 -> ターミナル `node -v`で ver 確認出来ます
 
 ### 1-3. Apollo Client + heroicons + cross-fetch のインストール
 
@@ -192,7 +192,7 @@ export default MyApp;
 
 ## 3. Tailwind CSS の導入
 
-https://tailwindcss.com/docs/guides/nextjs
+<https://tailwindcss.com/docs/guides/nextjs>
 
 ### 3-1. 必要 module のインストール
 
@@ -349,7 +349,7 @@ Nextjs ver11.0 対応で、次のレクチャーの Layout component で下記�
 
 \*コースの GitHub も修正済みです。
 
-1. Layout component に Image の import 文追加
+### 1. Layout component に Image の import 文追加
 
 ```js
 import Head from 'next/head';
@@ -357,7 +357,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 ```
 
-2. <img/>を Next の<Image/>表記に変更
+### 2. `<img/>`を Next の`<Image/>`表記に変更
 
 ```html
 <image src="/vercel.svg" alt="Vercel Logo" width="{72}" height="{16}" />
