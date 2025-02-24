@@ -42,7 +42,7 @@ info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/mess
 という表示がでてきちんとリクエストが処理されるようになる。
 `apolloClient.ts`で指定されている URL も`process.env.NEXT_PUBLIC_HASURA_URL`を`.env.local`に指定してそこから取得するように改修する。
 
-# Vercel
+## Vercel
 
 [Vercel](https://vercel.com/)
 github.com のアカウントで認証をする事にする。
@@ -50,7 +50,7 @@ github.com のアカウントで認証をする事にする。
 
 ![例](./vercel-project-setup.png)
 
-# GraphQL スゲー
+## GraphQL スゲー
 
 のだが、うまいこと纏められない。
 
@@ -58,21 +58,20 @@ github.com のアカウントで認証をする事にする。
 - One to Many(一対多)
 - Many to Many(多対多)
 
-* query
-* mutation
+- query
+- mutation
 
 各種操作に関しては動画を参照しながらの方が良さそうだけどまとめられたらまとめる…。
 
-# インストールする VS Code プラグイン
+## インストールする VS Code プラグイン
 
-- [ES7 React/Redux/GraphQL/React-Native snippets
-  ](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-# NextJs のセットアップ
+## NextJs のセットアップ
 
-- https://github.com/GomaGoma676/nextjs-hasura-basic-lesson/README.md を参照する
+- <https://github.com/GomaGoma676/nextjs-hasura-basic-lesson/README.md> を参照する
 
 ```bash
 mkdir kakikubo-hasura
@@ -87,7 +86,7 @@ corepack enable pnpm
 
 ### 1-2. create-next-app
 
-```
+```bash
 npx create-next-app .
 pnpm dev
 ```
@@ -98,19 +97,19 @@ pnpm dev
 
 ### 1-3. Apollo Client + heroicons + cross-fetch のインストール
 
-```
+```bash
 pnpm add @apollo/client graphql @apollo/react-hooks cross-fetch @heroicons/react
 ```
 
 ### 1-4. React-Testing-Library + MSW + next-page-tester のインストール
 
-```
+```bash
 pnpm add -D msw@0.35.0 next-page-tester jest @testing-library/react @types/jest @testing-library/jest-dom @testing-library/dom babel-jest @babel/core @testing-library/user-event jest-css-modules
 ```
 
 ### 1-5. Project folder 直下に".babelrc"ファイルを作成して下記設定を追加
 
-```
+```bash
 touch .babelrc
 ~~~
  {
@@ -121,7 +120,7 @@ touch .babelrc
 
 ### 1-6. package.json に jest の設定を追記
 
-```
+```js
 "jest": {
     "testPathIgnorePatterns": [
         "<rootDir>/.next/",
@@ -135,7 +134,7 @@ touch .babelrc
 
 ### 1-7. package.json に test script を追記
 
-```
+```js
 "scripts": {
     ...
     "test": "jest --env=jsdom --verbose"
@@ -144,11 +143,11 @@ touch .babelrc
 
 ### 1-8. prettier の設定 : settings で Require Config + Format On Save にチェック
 
-```
+```bash
 touch .prettierrc
 ```
 
-```
+```js
 {
     "singleQuote": true,
     "semi": true
@@ -157,23 +156,23 @@ touch .prettierrc
 
 ## 2. TypeScript の導入
 
-https://nextjs.org/learn/excel/typescript/create-tsconfig
+<https://nextjs.org/learn/excel/typescript/create-tsconfig>
 
 ### 2-1. 空の tsconfig.json 作成
 
-```
+```bash
 touch tsconfig.json
 ```
 
 ### 2-2. 必要 module のインストール
 
-```
+```bash
 yarn add -D typescript @types/react @types/node
 ```
 
 ### 2-3. 開発 server 起動
 
-```
+```bash
 yarn dev
 ```
 
@@ -181,14 +180,14 @@ yarn dev
 
 ### 2-5. AppProps 型追記
 
-```
-import { AppProps } from 'next/app'
+```js
+import { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
 ```
 
 ## 3. Tailwind CSS の導入
@@ -197,19 +196,19 @@ https://tailwindcss.com/docs/guides/nextjs
 
 ### 3-1. 必要 module のインストール
 
-```
+```bash
 yarn add tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
 ### 3-2. tailwind.config.js, postcss.config.js の生成
 
-```
+```bash
 npx tailwindcss init -p
 ```
 
 ### 3-3. tailwind.config.js の purge 設定追加
 
-```
+```js
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -224,7 +223,7 @@ module.exports = {
 
 ### 3-4. globals.css の編集
 
-```
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -234,20 +233,20 @@ module.exports = {
 
 ### 4-1. `__tests__`フォルダと`Home.test.tsx`ファイルの作成
 
-```
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import Home from '../pages/index'
+```tsx
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import Home from '../pages/index';
 
 it('Should render title text', () => {
-  render(<Home />)
-  expect(screen.getByText('Next.js!')).toBeInTheDocument()
-})
+  render(<Home />);
+  expect(screen.getByText('Next.js!')).toBeInTheDocument();
+});
 ```
 
 ### 4-2. yarn test -> テストが PASS するか確認
 
-```
+```log
  PASS  __tests__/Home.test.tsx
   ✓ Should render hello text (20 ms)
 
@@ -261,7 +260,7 @@ Time:        1.728 s, estimated 2 s
 
 ### 5-1. install modules + init
 
-```
+```bash
 % yarn add -D @graphql-codegen/cli
 % yarn graphql-codegen init
 yarn run v1.22.11
@@ -291,15 +290,15 @@ Cs)
 
 ### 5-3. generate types automatically
 
-```
+```bash
 yarn gen-types
 ```
 
-# 注意書き等
+## 注意書き等
 
 ## ReferenceError document is not defined 対処法
 
-https://www.udemy.com/course/hasura-nextjs-hasura-apollo-client-graphql-web/learn/lecture/27003596#overview
+<https://www.udemy.com/course/hasura-nextjs-hasura-apollo-client-graphql-web/learn/lecture/27003596#overview>
 
 次のレクチャー 13:12 辺りでテストを実行する際に, document is not defined というエラーが発生するケースがありますので、その場合は以下の対処をお願い致します。
 
@@ -324,8 +323,8 @@ tailwind.config.js ファイル
 ```js
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},
@@ -334,7 +333,7 @@ module.exports = {
 };
 ```
 
-https://tailwindcss.com/docs/guides/nextjs
+<https://tailwindcss.com/docs/guides/nextjs>
 
 ## Nextjs ver12.0 + Next-page-tester 互換性
 
@@ -353,9 +352,9 @@ Nextjs ver11.0 対応で、次のレクチャーの Layout component で下記�
 1. Layout component に Image の import 文追加
 
 ```js
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 ```
 
 2. <img/>を Next の<Image/>表記に変更
@@ -386,8 +385,8 @@ Jest 系の update の影響で、レクチャーのテスト実行時に 2 つ�
 
 レクチャー 32(2022/01/12 時点)の`Deploy to Vercel`の、2:08 辺りで作成する .env.test.local の環境変数が上手く読み込まれないケースがあるので、Home.test.tsx 以外の全てのテストファイルの import 直下に 下記環境変数を定義してから yarn test を実行してください。
 
-```
-process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql'
+```js
+process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql';
 ```
 
 url path は各自の Hasura URL に合わせて置き換えてください。
@@ -396,8 +395,8 @@ url path は各自の Hasura URL に合わせて置き換えてください。
 
 ## 2022/06/17 追記
 
-[Jest v28に上げるためにやったこと](https://zenn.dev/keita_hino/articles/488d31e8c4a240)
+[Jest v28 に上げるためにやったこと](https://zenn.dev/keita_hino/articles/488d31e8c4a240)
 
 ### `jsdomがデフォルトではインストールされなくなった`
 
-Vercelでも[エラーになってしまっていた。](https://vercel.com/kakikubo/learning-hasura/BRNVXK2pnsDGmEi6THmkKHd7Eanm)
+Vercel でも[エラーになってしまっていた。](https://vercel.com/kakikubo/learning-hasura/BRNVXK2pnsDGmEi6THmkKHd7Eanm)
