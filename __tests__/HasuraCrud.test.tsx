@@ -9,7 +9,7 @@ import 'setimmediate';
 import HasuraCRUD from '../pages/hasura-crud';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_USERS } from '../queries/queries';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';
