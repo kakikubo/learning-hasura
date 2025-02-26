@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { ChevronDoubleLeftIcon } from '@heroicons/react/20/solid';
@@ -9,7 +9,7 @@ import {
   GetUserIdsQuery,
   Users,
 } from '../../types/generated/graphql';
-import { Layout } from '../../components/Layout';
+import { Layout } from '@/components/Layout';
 interface Props {
   user: {
     __typename?: 'users';

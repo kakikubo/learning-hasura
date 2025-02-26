@@ -3,14 +3,12 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  testEnvironmentOptions: {
-    customExportConditions: ['node', 'node-addons'],
-  },
-  rootDir: __dirname,
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '\\.(css)$': '<rootDir>/node_modules/jest-css-modules',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^@/components/(.*)$': '<rootDir>/components/$1',
   },
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',

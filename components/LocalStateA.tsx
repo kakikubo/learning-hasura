@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChangeEvent, FormEvent, useState, FC } from 'react';
 import { todoVar } from '../cache';
 import { useReactiveVar } from '@apollo/client';
