@@ -1,11 +1,11 @@
-import React, { ChangeEvent, FormEvent, memo, FC } from 'react';
+import React, { FormEvent, memo, FC } from 'react';
 
 interface Props {
   printMsg: () => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>;
 }
 // eslint-disable-next-line react/display-name
-export const Child: FC<Props> = memo(({ printMsg, handleSubmit }) => {
+export const Child: FC<Props> = memo(({ printMsg }) => {
   return (
     <>
       {console.log('Child rendered')}

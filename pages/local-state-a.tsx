@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { LocalStateA } from '../components/LocalStateA';
-import { Layout } from '../components/Layout';
+import { LocalStateA } from '@/components/LocalStateA';
+import { Layout } from '@/components/Layout';
 
 const LocalStatePageA: FC = () => {
   return (
