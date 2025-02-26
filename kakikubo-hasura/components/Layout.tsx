@@ -21,7 +21,7 @@ export const Layout: VFC<Props> = ({
         <nav className="bg-gray-800 w-screen">
           <div className="flex item-center pl-8 h-14">
             <div className="flex space-x-4">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a
                   data-testid="home-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -29,7 +29,7 @@ export const Layout: VFC<Props> = ({
                   Home
                 </a>
               </Link>
-              <Link href="/local-state-a">
+              <Link legacyBehavior href="/local-state-a">
                 <a
                   data-testid="makevar-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -37,7 +37,7 @@ export const Layout: VFC<Props> = ({
                   makeVar
                 </a>
               </Link>
-              <Link href="/hasura-main">
+              <Link legacyBehavior href="/hasura-main">
                 <a
                   data-testid="fetchpolicy-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -45,7 +45,7 @@ export const Layout: VFC<Props> = ({
                   fetchPolicy(Hasura)
                 </a>
               </Link>
-              <Link href="/hasura-crud">
+              <Link legacyBehavior href="/hasura-crud">
                 <a
                   data-testid="crud-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -53,7 +53,7 @@ export const Layout: VFC<Props> = ({
                   CRUD(Hasura)
                 </a>
               </Link>
-              <Link href="/hasura-ssg">
+              <Link legacyBehavior href="/hasura-ssg">
                 <a
                   data-testid="ssg-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -61,7 +61,7 @@ export const Layout: VFC<Props> = ({
                   SSG+ISR(Hasura)
                 </a>
               </Link>
-              <Link href="/hooks-memo">
+              <Link legacyBehavior href="/hooks-memo">
                 <a
                   data-testid="memo-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
