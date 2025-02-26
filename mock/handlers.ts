@@ -1,4 +1,4 @@
-import { http, HttpResponse, graphql } from 'msw';
+import { http, HttpResponse, graphql, RequestHandler } from 'msw';
 
 export const handlers = [
   graphql.query('GetUsers', () => {
