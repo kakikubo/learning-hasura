@@ -25,7 +25,6 @@ afterEach(() => {
 afterAll(() => {
   server.close();
 });
-
 describe('SSG Test Cases', () => {
   it('Shoud render the list of users pre-fetched by getStaticProps', async () => {
     const users = [

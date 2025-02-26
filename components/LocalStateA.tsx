@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChangeEvent, FormEvent, useState, FC } from 'react';
 import { todoVar } from '../cache';
 import { useReactiveVar } from '@apollo/client';
@@ -42,7 +43,7 @@ export const LocalStateA: FC = () => {
           Add new state
         </button>
       </form>
-      <Link href="/local-state-b">
+      <Link legacyBehavior href="/local-state-b">
         <a>Next</a>
       </Link>
     </>

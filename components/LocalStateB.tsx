@@ -1,3 +1,4 @@
+import React from 'react';
 import { FC } from 'react';
 import { todoVar } from '../cache';
 import { useReactiveVar } from '@apollo/client';
@@ -14,7 +15,7 @@ export const LocalStateB: FC = () => {
           </p>
         );
       })}
-      <Link href="/local-state-a">
+      <Link legacyBehavior href="/local-state-a">
         <a>Back</a>
       </Link>
     </>
