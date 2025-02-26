@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "schedule:weekly"],
+  "extends": ["config:recommended", "schedule:weekly"],
   "timezone": "Asia/Tokyo",
   "schedule": ["before 9am"],
   "automerge": false,
@@ -22,9 +22,7 @@
     },
     {
       "matchManagers": ["github-actions"],
-      "assignees": [
-        "kakikubo"
-      ]
+      "assignees": ["kakikubo"]
     },
     {
       "matchUpdateTypes": ["minor", "patch"],
