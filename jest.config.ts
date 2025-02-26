@@ -19,8 +19,11 @@ const config: Config = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testEnvironmentOptions: {
-    customExportConditions: [''],
+    customExportConditions: ['node', 'node-addons'],
   },
+  rootDir: __dirname,
+  transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs)/)'],
+  modulePaths: ['<rootDir>/src'],
 };
 
 export default config;
