@@ -1,4 +1,4 @@
-import { VFC, memo, Dispatch, SetStateAction } from 'react';
+import { FC, memo, Dispatch, SetStateAction } from 'react';
 import { Users, DeleteUserMutationFn } from '../types/generated/graphql';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   >;
 }
 // eslint-disable-next-line react/display-name
-export const UserItem: VFC<Props> = memo(
+export const UserItem: FC<Props> = memo(
   ({ user, delete_users_by_pk, setEditedUser }) => {
     console.log('UserItem rendered');
     return (

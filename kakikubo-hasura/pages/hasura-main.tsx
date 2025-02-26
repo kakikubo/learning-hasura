@@ -1,11 +1,12 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { GET_USERS } from '../queries/queries';
 import { GetUsersQuery, Users_Constraint } from '../types/generated/graphql';
 import { Layout } from '../components/Layout';
+import { LinkComponent } from '../components/LinkComponent';
 
-const FetchMain: VFC = () => {
+const FetchMain: FC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     // fetchPolicy: 'network-only',
     fetchPolicy: 'cache-and-network',
@@ -30,9 +31,9 @@ const FetchMain: VFC = () => {
           </p>
         );
       })}
-      <Link href="/hasura-sub">
-        <a className="mt-6">Next</a>
-      </Link>
+      <LinkComponent href="/hasura-sub">
+        <span className="mt-6">Next</span>
+      </LinkComponent>
     </Layout>
   );
 };

@@ -1,8 +1,8 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { LocalStateA } from '../components/LocalStateA';
 import { Layout } from '../components/Layout';
 
-const LocalStatePageA: VFC = () => {
+const LocalStatePageA: FC = () => {
   return (
     <Layout title="Local State A">
       <LocalStateA />

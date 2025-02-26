@@ -1,9 +1,9 @@
-import { ChangeEvent, FormEvent, useState, VFC } from 'react';
+import { ChangeEvent, FormEvent, useState, FC } from 'react';
 import { todoVar } from '../cache';
 import { useReactiveVar } from '@apollo/client';
 import Link from 'next/link';
 
-export const LocalStateA: VFC = () => {
+export const LocalStateA: FC = () => {
   const [input, setInput] = useState('');
   const todos = useReactiveVar(todoVar);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -42,7 +42,7 @@ export const LocalStateA: VFC = () => {
           Add new state
         </button>
       </form>
-      <Link href="/local-state-b">
+      <Link legacyBehavior href="/local-state-b">
         <a>Next</a>
       </Link>
     </>
