@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { LocalStateA } from '../components/LocalStateA';
 import { Layout } from '../components/Layout';
 

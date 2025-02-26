@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { GET_USERS_LOCAL, GET_USERS } from '../queries/queries';
