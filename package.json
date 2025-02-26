@@ -1,6 +1,6 @@
 {
   "name": "kakikubo-hasura",
-  "packageManager": "pnpm@10.5.0",
+  "packageManager": "pnpm@10.5.1",
   "private": true,
   "engines": {
     "node": ">=20.9.0"
