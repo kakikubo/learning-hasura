@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { GET_USERS_LOCAL, GET_USERS } from '../queries/queries';
 import { GetUsersQuery, Users_Constraint } from '../types/generated/graphql';
-import { Layout } from '../components/Layout';
+import { Layout } from '@/components/Layout';
 
 const FetchSub: FC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS_LOCAL);

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Layout } from '../components/Layout';
-import { CreateUser } from '../components/CreateUser';
+import { Layout } from '@/components/Layout';
+import { CreateUser } from '@/components/CreateUser';
 
 const HooksMemo: FC = () => {
   return (

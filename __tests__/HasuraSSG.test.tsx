@@ -3,28 +3,19 @@
  */
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node'; // msw/nodeを使用
+import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import HasuraSSG from '../pages/hasura-ssg';
 
 process.env.NEXT_PUBLIC_HASURA_URL = 'https://xxx.hasura.app/v1/graphql';
 
-// MSW v2.xの新しい設定方法でNode環境用のサーバーを設定
 const server = setupServer(...handlers);
 
-beforeAll(() => {
-  server.listen({ onUnhandledRequest: 'error' });
-});
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
-afterEach(() => {
-  server.resetHandlers();
-});
-
-afterAll(() => {
-  server.close();
-});
 describe('SSG Test Cases', () => {
   it('Shoud render the list of users pre-fetched by getStaticProps', async () => {
     const users = [

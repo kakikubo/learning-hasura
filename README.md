@@ -120,7 +120,7 @@ touch .babelrc
 
 ### 1-6. package.json に jest の設定を追記
 
-```js
+```json lines
 "jest": {
     "testPathIgnorePatterns": [
         "<rootDir>/.next/",
@@ -134,7 +134,7 @@ touch .babelrc
 
 ### 1-7. package.json に test script を追記
 
-```js
+```json lines
 "scripts": {
     ...
     "test": "jest --env=jsdom --verbose"
@@ -147,7 +147,7 @@ touch .babelrc
 touch .prettierrc
 ```
 
-```js
+```json lines
 {
     "singleQuote": true,
     "semi": true

@@ -12,8 +12,8 @@ import {
   DeleteUserMutation,
   UpdateUserMutation,
 } from '../types/generated/graphql';
-import { Layout } from '../components/Layout';
-import { UserItem } from '../components/UserItem';
+import { Layout } from '@/components/Layout';
+import { UserItem } from '@/components/UserItem';
 
 const HasuraCRUD: FC = () => {
   const [editedUser, setEditedUser] = useState({ id: '', name: '' });
