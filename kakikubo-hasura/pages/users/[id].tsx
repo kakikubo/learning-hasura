@@ -29,7 +29,7 @@ const UserDetail: VFC<Props> = ({ user }) => {
       </p>
       <p className="mb-4 text-xl font-bold">{user.name}</p>
       <p className="mb-12">{user.created_at}</p>
-      <Link href="/hasura-ssg" passHref>
+      <Link legacyBehavior href="/hasura-ssg" passHref>
         <div className="flex cursor-pointer mt-12">
           <ChevronDoubleLeftIcon
             data-testid="auto-to-main"

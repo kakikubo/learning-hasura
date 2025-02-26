@@ -14,7 +14,7 @@ export const LocalStateB: VFC = () => {
           </p>
         );
       })}
-      <Link href="/local-state-a">
+      <Link legacyBehavior href="/local-state-a">
         <a>Back</a>
       </Link>
     </>

@@ -30,7 +30,7 @@ const FetchMain: VFC = () => {
           </p>
         );
       })}
-      <Link href="/hasura-sub">
+      <Link legacyBehavior href="/hasura-sub">
         <a className="mt-6">Next</a>
       </Link>
     </Layout>
