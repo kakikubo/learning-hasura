@@ -1,4 +1,4 @@
-import { FC, useState, FormEvent } from 'react';
+import React, { FC, useState, FormEvent } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import {
   GET_USERS,

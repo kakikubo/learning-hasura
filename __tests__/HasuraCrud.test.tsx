@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import React, { act } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { setupServer } from 'msw/node';
@@ -9,7 +10,7 @@ import 'setimmediate';
 import HasuraCRUD from '../pages/hasura-crud';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_USERS } from '../queries/queries';
-import { act } from 'react-dom/test-utils';
+// import { act } from 'react-dom/test-utils';
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';

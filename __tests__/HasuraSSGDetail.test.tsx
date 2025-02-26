@@ -8,6 +8,7 @@ import userEvent from '@testing-library/user-event';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import HasuraSSGDetail from '../pages/users/[id]';
+import React from 'react';
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';
