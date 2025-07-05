@@ -29,7 +29,7 @@
 
 ### 2. Vercel へのデプロイ
 
-1.  [Vercel](httpss://vercel.com/)にご自身のGitHubアカウントを連携します。
+1.  [Vercel](https://vercel.com/)にご自身のGitHubアカウントを連携します。
 2.  プロジェクトのセットアップ時、以下の画像のように環境変数を設定します。
 
     ![Vercel Project Setup](./vercel-project-setup.png)
