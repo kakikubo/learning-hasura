@@ -62,7 +62,7 @@ importers:
         version: 4.3.3(graphql@16.11.0)
       '@mswjs/interceptors':
         specifier: ^0.39.1
-        version: 0.39.2
+        version: 0.39.3
       '@tailwindcss/postcss':
         specifier: ^4.1.4
         version: 4.1.11
@@ -1553,8 +1553,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@mswjs/interceptors@0.39.2':
-    resolution: {integrity: sha512-RuzCup9Ct91Y7V79xwCb146RaBRHZ7NBbrIUySumd1rpKqHL5OonaqrGIbug5hNwP/fRyxFMA6ISgw4FTtYFYg==}
+  '@mswjs/interceptors@0.39.3':
+    resolution: {integrity: sha512-9bw/wBL7pblsnOCIqvn1788S9o4h+cC5HWXg0Xhh0dOzsZ53IyfmBM+FYqpDDPbm0xjCqEqvCITloF3Dm4TXRQ==}
     engines: {node: '>=18'}
 
   '@napi-rs/wasm-runtime@0.2.12':
@@ -6920,7 +6920,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mswjs/interceptors@0.39.2':
+  '@mswjs/interceptors@0.39.3':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/logger': 0.3.0
@@ -9641,7 +9641,7 @@ snapshots:
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
       '@inquirer/confirm': 5.1.13(@types/node@24.0.14)
-      '@mswjs/interceptors': 0.39.2
+      '@mswjs/interceptors': 0.39.3
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
