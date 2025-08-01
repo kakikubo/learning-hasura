@@ -1,15 +1,23 @@
 // jest.setup.ts
 import '@testing-library/jest-dom';
 import { fetch, Request, Response, Headers } from 'cross-fetch';
-import { TextEncoder, TextDecoder } from 'util';
 import { TransformStream } from 'web-streams-polyfill';
 
 global.fetch = fetch;
 global.Request = Request;
 global.Response = Response;
 global.Headers = Headers;
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
+
+// Jest環境ではTextEncoder/TextDecoderがグローバルに定義されていないため、
+// utilパッケージから取得して設定
+if (typeof global.TextEncoder === 'undefined') {
+  const { TextEncoder } = require('util');
+  global.TextEncoder = TextEncoder as typeof globalThis.TextEncoder;
+}
+if (typeof global.TextDecoder === 'undefined') {
+  const { TextDecoder } = require('util');
+  global.TextDecoder = TextDecoder as typeof globalThis.TextDecoder;
+}
 global.TransformStream = TransformStream;
 
 // BroadcastChannelのモック実装
