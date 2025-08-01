@@ -18,7 +18,9 @@ if (typeof global.TextDecoder === 'undefined') {
   const { TextDecoder } = require('util');
   global.TextDecoder = TextDecoder as typeof globalThis.TextDecoder;
 }
-global.TransformStream = TransformStream;
+if (typeof global.TransformStream === 'undefined') {
+  global.TransformStream = TransformStream as typeof globalThis.TransformStream;
+}
 
 // BroadcastChannelのモック実装
 class BroadcastChannelMock implements BroadcastChannel {
