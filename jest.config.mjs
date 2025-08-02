@@ -1,6 +1,11 @@
-import type { Config } from 'jest';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const config: Config = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+/** @type {import('jest').Config} */
+const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
