@@ -3,10 +3,10 @@
   "packageManager": "pnpm@10.14.0",
   "private": true,
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=20.12.2"
   },
   "scripts": {
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
