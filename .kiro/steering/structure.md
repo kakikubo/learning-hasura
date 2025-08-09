@@ -18,45 +18,51 @@
 ## 主要ディレクトリ
 
 ### `/components`
-- 関数コンポーネントパターンに従った再利用可能なUIコンポーネント
-- プロパティにはTypeScriptインターフェースを使用
+
+- 関数コンポーネントパターンに従った再利用可能な UI コンポーネント
+- プロパティには TypeScript インターフェースを使用
 - テスト用に`data-testid`属性を含める
-- 命名規則: コンポーネントファイルはPascalCase
+- 命名規則: コンポーネントファイルは PascalCase
 
 ### `/pages`
-- Next.jsファイルベースルーティング
-- 各ファイルはデフォルトReactコンポーネントをエクスポート
+
+- Next.js ファイルベースルーティング
+- 各ファイルはデフォルト React コンポーネントをエクスポート
 - データ取得には`getStaticProps`/`getServerSideProps`を使用
 - 動的ルートには`/users/[id].tsx`のようなサブフォルダー
 
 ### `/lib`
-- `apolloClient.ts`: SSRサポート付きApollo Client設定
+
+- `apolloClient.ts`: SSR サポート付き Apollo Client 設定
 - ユーティリティ関数と共有設定
 - 環境固有のロジック
 
 ### `/queries`
-- `queries.ts`内のすべてのGraphQL操作
+
+- `queries.ts`内のすべての GraphQL 操作
 - `gql`テンプレートリテラルを使用
 - 命名規則: 操作は大文字
 - クエリ、ミューテーション、サブスクリプションを分離
 
 ### `/types/generated`
-- GraphQLスキーマから自動生成されたTypeScript型
-- GraphQL Code Generatorによって生成
+
+- GraphQL スキーマから自動生成された TypeScript 型
+- GraphQL Code Generator によって生成
 - 手動編集禁止 - `pnpm gen-types`で再生成
 
 ### `/hooks`
-- ビジネスロジック用カスタムReactフック
+
+- ビジネスロジック用カスタム React フック
 - フック名には`use`プレフィックスを使用
-- フォーム処理、API呼び出し、状態管理をカプセル化
+- フォーム処理、API 呼び出し、状態管理をカプセル化
 
 ## ファイル命名規則
 
 - **コンポーネント**: PascalCase（例: `CreateUser.tsx`）
 - **ページ**: kebab-case（例: `hasura-crud.tsx`）
-- **フック**: `use`プレフィックス付きcamelCase（例: `useCreateForm.ts`）
-- **型**: インターフェース/型はPascalCase
-- **定数**: GraphQL操作は大文字
+- **フック**: `use`プレフィックス付き camelCase（例: `useCreateForm.ts`）
+- **型**: インターフェース/型は PascalCase
+- **定数**: GraphQL 操作は大文字
 
 ## インポートパターン
 
