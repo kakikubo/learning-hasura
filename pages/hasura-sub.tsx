@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client/react";
 import { GET_USERS_LOCAL } from '../queries/queries';
 import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '@/components/Layout';
