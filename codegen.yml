@@ -7,3 +7,8 @@ generates:
       - "typescript"
       - "typescript-operations"
       - "typescript-react-apollo"
+    config:
+      apolloReactHooksImportFrom: "@apollo/client/react"
+      apolloReactCommonImportFrom: "@apollo/client"
+      gqlImport: "@apollo/client#gql"
+      reactApolloVersion: 4
