@@ -1276,10 +1276,10 @@ export function useGetUsersQuery(
   baseOptions?: Apollo.QueryOptions<GetUsersQuery, GetUsersQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useQuery<GetUsersQuery, GetUsersQueryVariables>(
-    GetUsersDocument,
-    options
-  );
+  return useQuery<GetUsersQuery, GetUsersQueryVariables>({
+    query: GetUsersDocument,
+    ...options
+  });
 }
 export function useGetUsersLazyQuery(
   baseOptions?: Apollo.LazyQueryOptions<
@@ -1288,10 +1288,10 @@ export function useGetUsersLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
-    GetUsersDocument,
-    options
-  );
+  return useLazyQuery<GetUsersQuery, GetUsersQueryVariables>({
+    query: GetUsersDocument,
+    ...options
+  });
 }
 export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
 export type GetUsersLazyQueryHookResult = ReturnType<
@@ -1331,10 +1331,10 @@ export function useGetUserIdsQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
-    GetUserIdsDocument,
-    options
-  );
+  return useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>({
+    query: GetUserIdsDocument,
+    ...options
+  });
 }
 export function useGetUserIdsLazyQuery(
   baseOptions?: Apollo.LazyQueryOptions<
@@ -1343,10 +1343,10 @@ export function useGetUserIdsLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
-    GetUserIdsDocument,
-    options
-  );
+  return useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>({
+    query: GetUserIdsDocument,
+    ...options
+  });
 }
 export type GetUserIdsQueryHookResult = ReturnType<typeof useGetUserIdsQuery>;
 export type GetUserIdsLazyQueryHookResult = ReturnType<
@@ -1389,10 +1389,10 @@ export function useGetUserByIdQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
-    GetUserByIdDocument,
-    options
-  );
+  return useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>({
+    query: GetUserByIdDocument,
+    ...options
+  });
 }
 export function useGetUserByIdLazyQuery(
   baseOptions?: Apollo.LazyQueryOptions<
@@ -1401,10 +1401,10 @@ export function useGetUserByIdLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
-    GetUserByIdDocument,
-    options
-  );
+  return useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>({
+    query: GetUserByIdDocument,
+    ...options
+  });
 }
 export type GetUserByIdQueryHookResult = ReturnType<typeof useGetUserByIdQuery>;
 export type GetUserByIdLazyQueryHookResult = ReturnType<
@@ -1452,10 +1452,10 @@ export function useCreateUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useMutation<CreateUserMutation, CreateUserMutationVariables>(
-    CreateUserDocument,
-    options
-  );
+  return useMutation<CreateUserMutation, CreateUserMutationVariables>({
+    mutation: CreateUserDocument,
+    ...options
+  });
 }
 export type CreateUserMutationHookResult = ReturnType<
   typeof useCreateUserMutation
@@ -1504,10 +1504,10 @@ export function useDeleteUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
-    DeleteUserDocument,
-    options
-  );
+  return useMutation<DeleteUserMutation, DeleteUserMutationVariables>({
+    mutation: DeleteUserDocument,
+    ...options
+  });
 }
 export type DeleteUserMutationHookResult = ReturnType<
   typeof useDeleteUserMutation
@@ -1557,10 +1557,10 @@ export function useUpdateUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
-    UpdateUserDocument,
-    options
-  );
+  return useMutation<UpdateUserMutation, UpdateUserMutationVariables>({
+    mutation: UpdateUserDocument,
+    ...options
+  });
 }
 export type UpdateUserMutationHookResult = ReturnType<
   typeof useUpdateUserMutation
