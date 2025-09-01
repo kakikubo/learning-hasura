@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -1275,7 +1276,7 @@ export function useGetUsersQuery(
   baseOptions?: Apollo.QueryOptions<GetUsersQuery, GetUsersQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(
+  return useQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
     options
   );
@@ -1287,7 +1288,7 @@ export function useGetUsersLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
+  return useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
     options
   );
@@ -1330,7 +1331,7 @@ export function useGetUserIdsQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+  return useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
     options
   );
@@ -1342,7 +1343,7 @@ export function useGetUserIdsLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+  return useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
     options
   );
@@ -1388,7 +1389,7 @@ export function useGetUserByIdQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+  return useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,
     options
   );
@@ -1400,7 +1401,7 @@ export function useGetUserByIdLazyQuery(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+  return useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,
     options
   );
@@ -1451,7 +1452,7 @@ export function useCreateUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(
+  return useMutation<CreateUserMutation, CreateUserMutationVariables>(
     CreateUserDocument,
     options
   );
@@ -1503,7 +1504,7 @@ export function useDeleteUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
+  return useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
     DeleteUserDocument,
     options
   );
@@ -1556,7 +1557,7 @@ export function useUpdateUserMutation(
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
+  return useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
     UpdateUserDocument,
     options
   );
