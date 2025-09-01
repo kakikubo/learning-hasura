@@ -1272,7 +1272,7 @@ export const GetUsersDocument = gql`
  * });
  */
 export function useGetUsersQuery(
-  baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>
+  baseOptions?: Apollo.QueryOptions<GetUsersQuery, GetUsersQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
   return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(
@@ -1281,7 +1281,7 @@ export function useGetUsersQuery(
   );
 }
 export function useGetUsersLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryOptions<
     GetUsersQuery,
     GetUsersQueryVariables
   >
@@ -1324,7 +1324,7 @@ export const GetUserIdsDocument = gql`
  * });
  */
 export function useGetUserIdsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
+  baseOptions?: Apollo.QueryOptions<
     GetUserIdsQuery,
     GetUserIdsQueryVariables
   >
@@ -1336,7 +1336,7 @@ export function useGetUserIdsQuery(
   );
 }
 export function useGetUserIdsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryOptions<
     GetUserIdsQuery,
     GetUserIdsQueryVariables
   >
@@ -1382,7 +1382,7 @@ export const GetUserByIdDocument = gql`
  * });
  */
 export function useGetUserByIdQuery(
-  baseOptions: Apollo.QueryHookOptions<
+  baseOptions: Apollo.QueryOptions<
     GetUserByIdQuery,
     GetUserByIdQueryVariables
   >
@@ -1394,7 +1394,7 @@ export function useGetUserByIdQuery(
   );
 }
 export function useGetUserByIdLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryOptions<
     GetUserByIdQuery,
     GetUserByIdQueryVariables
   >
@@ -1445,7 +1445,7 @@ export type CreateUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useCreateUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     CreateUserMutation,
     CreateUserMutationVariables
   >
@@ -1497,7 +1497,7 @@ export type DeleteUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useDeleteUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     DeleteUserMutation,
     DeleteUserMutationVariables
   >
@@ -1550,7 +1550,7 @@ export type UpdateUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useUpdateUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     UpdateUserMutation,
     UpdateUserMutationVariables
   >
