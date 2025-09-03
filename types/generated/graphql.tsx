@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client/react';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -1272,22 +1273,19 @@ export const GetUsersDocument = gql`
  * });
  */
 export function useGetUsersQuery(
-  baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>
+  baseOptions?: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(
+  return useQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
     options
   );
 }
 export function useGetUsersLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetUsersQuery,
-    GetUsersQueryVariables
-  >
+  baseOptions?: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
+  return useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
     options
   );
@@ -1296,10 +1294,7 @@ export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
 export type GetUsersLazyQueryHookResult = ReturnType<
   typeof useGetUsersLazyQuery
 >;
-export type GetUsersQueryResult = Apollo.QueryResult<
-  GetUsersQuery,
-  GetUsersQueryVariables
->;
+export type GetUsersQueryResult = any;
 export const GetUserIdsDocument = gql`
   query GetUserIds {
     users(order_by: { created_at: desc }) {
@@ -1324,25 +1319,19 @@ export const GetUserIdsDocument = gql`
  * });
  */
 export function useGetUserIdsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetUserIdsQuery,
-    GetUserIdsQueryVariables
-  >
+  baseOptions?: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+  return useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
     options
   );
 }
 export function useGetUserIdsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetUserIdsQuery,
-    GetUserIdsQueryVariables
-  >
+  baseOptions?: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
+  return useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
     options
   );
@@ -1351,10 +1340,7 @@ export type GetUserIdsQueryHookResult = ReturnType<typeof useGetUserIdsQuery>;
 export type GetUserIdsLazyQueryHookResult = ReturnType<
   typeof useGetUserIdsLazyQuery
 >;
-export type GetUserIdsQueryResult = Apollo.QueryResult<
-  GetUserIdsQuery,
-  GetUserIdsQueryVariables
->;
+export type GetUserIdsQueryResult = any;
 export const GetUserByIdDocument = gql`
   query GetUserById($id: uuid!) {
     users_by_pk(id: $id) {
@@ -1382,25 +1368,19 @@ export const GetUserByIdDocument = gql`
  * });
  */
 export function useGetUserByIdQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetUserByIdQuery,
-    GetUserByIdQueryVariables
-  >
+  baseOptions: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+  return useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,
     options
   );
 }
 export function useGetUserByIdLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetUserByIdQuery,
-    GetUserByIdQueryVariables
-  >
+  baseOptions?: any
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
+  return useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,
     options
   );
@@ -1409,10 +1389,7 @@ export type GetUserByIdQueryHookResult = ReturnType<typeof useGetUserByIdQuery>;
 export type GetUserByIdLazyQueryHookResult = ReturnType<
   typeof useGetUserByIdLazyQuery
 >;
-export type GetUserByIdQueryResult = Apollo.QueryResult<
-  GetUserByIdQuery,
-  GetUserByIdQueryVariables
->;
+export type GetUserByIdQueryResult = any;
 export const CreateUserDocument = gql`
   mutation CreateUser($name: String!) {
     insert_users_one(object: { name: $name }) {
@@ -1422,10 +1399,7 @@ export const CreateUserDocument = gql`
     }
   }
 `;
-export type CreateUserMutationFn = Apollo.MutationFunction<
-  CreateUserMutation,
-  CreateUserMutationVariables
->;
+export type CreateUserMutationFn = any;
 
 /**
  * __useCreateUserMutation__
@@ -1445,13 +1419,13 @@ export type CreateUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useCreateUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     CreateUserMutation,
     CreateUserMutationVariables
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(
+  return useMutation<CreateUserMutation, CreateUserMutationVariables>(
     CreateUserDocument,
     options
   );
@@ -1459,12 +1433,8 @@ export function useCreateUserMutation(
 export type CreateUserMutationHookResult = ReturnType<
   typeof useCreateUserMutation
 >;
-export type CreateUserMutationResult =
-  Apollo.MutationResult<CreateUserMutation>;
-export type CreateUserMutationOptions = Apollo.BaseMutationOptions<
-  CreateUserMutation,
-  CreateUserMutationVariables
->;
+export type CreateUserMutationResult = any;
+export type CreateUserMutationOptions = any;
 export const DeleteUserDocument = gql`
   mutation DeleteUser($id: uuid!) {
     delete_users_by_pk(id: $id) {
@@ -1474,10 +1444,7 @@ export const DeleteUserDocument = gql`
     }
   }
 `;
-export type DeleteUserMutationFn = Apollo.MutationFunction<
-  DeleteUserMutation,
-  DeleteUserMutationVariables
->;
+export type DeleteUserMutationFn = any;
 
 /**
  * __useDeleteUserMutation__
@@ -1497,13 +1464,13 @@ export type DeleteUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useDeleteUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     DeleteUserMutation,
     DeleteUserMutationVariables
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
+  return useMutation<DeleteUserMutation, DeleteUserMutationVariables>(
     DeleteUserDocument,
     options
   );
@@ -1511,12 +1478,8 @@ export function useDeleteUserMutation(
 export type DeleteUserMutationHookResult = ReturnType<
   typeof useDeleteUserMutation
 >;
-export type DeleteUserMutationResult =
-  Apollo.MutationResult<DeleteUserMutation>;
-export type DeleteUserMutationOptions = Apollo.BaseMutationOptions<
-  DeleteUserMutation,
-  DeleteUserMutationVariables
->;
+export type DeleteUserMutationResult = any;
+export type DeleteUserMutationOptions = any;
 export const UpdateUserDocument = gql`
   mutation UpdateUser($id: uuid!, $name: String!) {
     update_users_by_pk(pk_columns: { id: $id }, _set: { name: $name }) {
@@ -1526,10 +1489,7 @@ export const UpdateUserDocument = gql`
     }
   }
 `;
-export type UpdateUserMutationFn = Apollo.MutationFunction<
-  UpdateUserMutation,
-  UpdateUserMutationVariables
->;
+export type UpdateUserMutationFn = any;
 
 /**
  * __useUpdateUserMutation__
@@ -1550,13 +1510,13 @@ export type UpdateUserMutationFn = Apollo.MutationFunction<
  * });
  */
 export function useUpdateUserMutation(
-  baseOptions?: Apollo.MutationHookOptions<
+  baseOptions?: Apollo.MutationOptions<
     UpdateUserMutation,
     UpdateUserMutationVariables
   >
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
+  return useMutation<UpdateUserMutation, UpdateUserMutationVariables>(
     UpdateUserDocument,
     options
   );
@@ -1564,9 +1524,5 @@ export function useUpdateUserMutation(
 export type UpdateUserMutationHookResult = ReturnType<
   typeof useUpdateUserMutation
 >;
-export type UpdateUserMutationResult =
-  Apollo.MutationResult<UpdateUserMutation>;
-export type UpdateUserMutationOptions = Apollo.BaseMutationOptions<
-  UpdateUserMutation,
-  UpdateUserMutationVariables
->;
+export type UpdateUserMutationResult = any;
+export type UpdateUserMutationOptions = any;

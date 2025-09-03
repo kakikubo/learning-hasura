@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client/react";
 import { GET_USERS } from '../queries/queries';
 import { GetUsersQuery, Users_Constraint } from '../types/generated/graphql';
 import { Layout } from '@/components/Layout';
 import { LinkComponent } from '@/components/LinkComponent';
 
-const FetchMain: FC = () => {
+const HasuraMain: FC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     // fetchPolicy: 'network-only',
     fetchPolicy: 'cache-and-network',
@@ -37,4 +37,4 @@ const FetchMain: FC = () => {
   );
 };
 
-export default FetchMain;
+export default HasuraMain;
