@@ -11,7 +11,7 @@ export const GET_USERS = gql`
 `;
 
 export const GET_USERS_LOCAL = gql`
-  query GetUsers {
+  query GetUsersLocal {
     users(order_by: { created_at: desc }) @client {
       id
       name

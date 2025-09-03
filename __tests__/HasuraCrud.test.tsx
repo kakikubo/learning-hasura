@@ -8,7 +8,7 @@ import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import HasuraCRUD from '../pages/hasura-crud';
-import { MockedProvider } from '@apollo/client/testing';
+import { MockedProvider } from '@apollo/client/testing/react';
 import { GET_USERS } from '../queries/queries';
 // import { act } from 'react-dom/test-utils';
 

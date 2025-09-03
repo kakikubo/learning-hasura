@@ -8,10 +8,12 @@ import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import HasuraMain from '../pages/hasura-main';
+
+
 import { GET_USERS } from '../queries/queries';
 
 // まず、モックでApollo Clientを作成するために必要なパッケージをインポートします
-import { MockedProvider } from '@apollo/client/testing';
+import { MockedProvider } from '@apollo/client/testing/react';
 
 process.env.NEXT_PUBLIC_HASURA_URL =
   'https://kakikubo-hasura.hasura.app/v1/graphql';
