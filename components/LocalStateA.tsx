@@ -42,7 +42,7 @@ export const LocalStateA: FC = () => {
           Add new state
         </button>
       </form>
-      <Link legacyBehavior href="/local-state-b">
+      <Link href="/local-state-b">
         <a>Next</a>
       </Link>
     </>

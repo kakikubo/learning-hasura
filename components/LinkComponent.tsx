@@ -8,9 +8,5 @@ export const LinkComponent = ({
   children: React.ReactNode;
   href: string;
 }) => {
-  return (
-    <Link href={href} legacyBehavior={false}>
-      {children}
-    </Link>
-  );
+  return <Link href={href}>{children}</Link>;
 };
