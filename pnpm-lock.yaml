@@ -64,8 +64,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.3(graphql@16.11.0)
       '@mswjs/interceptors':
-        specifier: ^0.39.6
-        version: 0.39.8
+        specifier: ^0.40.0
+        version: 0.40.0
       '@tailwindcss/postcss':
         specifier: ^4.1.4
         version: 4.1.14
@@ -1628,6 +1628,10 @@ packages:
 
   '@mswjs/interceptors@0.39.8':
     resolution: {integrity: sha512-2+BzZbjRO7Ct61k8fMNHEtoKjeWI9pIlHFTqBwZ5icHpqszIgEZbjb1MW5Z0+bITTCTl3gk4PDBxs9tA/csXvA==}
+    engines: {node: '>=18'}
+
+  '@mswjs/interceptors@0.40.0':
+    resolution: {integrity: sha512-EFd6cVbHsgLa6wa4RljGj6Wk75qoHxUSyc5asLyyPSyuhIcdS2Q3Phw6ImS1q+CkALthJRShiYfKANcQMuMqsQ==}
     engines: {node: '>=18'}
 
   '@napi-rs/wasm-runtime@0.2.12':
@@ -6912,6 +6916,15 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@mswjs/interceptors@0.39.8':
+    dependencies:
+      '@open-draft/deferred-promise': 2.2.0
+      '@open-draft/logger': 0.3.0
+      '@open-draft/until': 2.1.0
+      is-node-process: 1.2.0
+      outvariant: 1.4.3
+      strict-event-emitter: 0.5.1
+
+  '@mswjs/interceptors@0.40.0':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/logger': 0.3.0
