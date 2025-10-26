@@ -9,25 +9,29 @@ const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+\\.(ts|tsx)$': [
       'ts-jest',
       {
         tsconfig: 'tsconfig.jest.json',
+        useESM: true,
       },
     ],
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '^@/components/(.*)$': '<rootDir>/components/$1',
+    '^until-async$': '<rootDir>/__mocks__/until-async.js',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testEnvironmentOptions: {
     customExportConditions: ['node', 'node-addons'],
   },
   rootDir: __dirname,
-  transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs)/)'],
+  transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs|until-async)/)'],
   modulePaths: ['<rootDir>/src'],
 };
 
