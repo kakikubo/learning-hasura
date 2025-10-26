@@ -1,5 +1,6 @@
 {
   "name": "kakikubo-hasura",
+  "type": "module",
   "packageManager": "pnpm@10.19.0",
   "private": true,
   "engines": {
