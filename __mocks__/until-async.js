@@ -23,4 +23,7 @@ function until(predicate, options = {}) {
   });
 }
 
+// Support both CommonJS and ESM imports
 module.exports = { until };
+module.exports.until = until;
+module.exports.default = { until };
