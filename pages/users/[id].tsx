@@ -44,30 +44,48 @@ const UserDetail: FC<Props> = ({ user }) => {
 export default UserDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apolloClient = initializeApollo();
-  const { data } = await apolloClient.query<GetUserIdsQuery>({
-    query: GET_USERIDS,
-  });
-  const paths = data.users.map((user) => ({
-    params: {
-      id: user.id,
-    },
-  }));
-  return {
-    paths,
-    fallback: true,
-  };
+  try {
+    const apolloClient = initializeApollo();
+    const { data } = await apolloClient.query<GetUserIdsQuery>({
+      query: GET_USERIDS,
+    });
+    const paths = data.users.map((user) => ({
+      params: {
+        id: user.id,
+      },
+    }));
+    return {
+      paths,
+      fallback: true,
+    };
+  } catch (error) {
+    console.warn('Failed to fetch user IDs during build:', error);
+    return {
+      paths: [],
+      fallback: true,
+    };
+  }
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const apolloClient = initializeApollo();
-  const { data } = await apolloClient.query<GetUserByIdQuery>({
-    query: GET_USERBY_ID,
-    variables: { id: params.id },
-  });
-  return {
-    props: {
-      user: data.users_by_pk,
-    },
-    revalidate: 1,
-  };
+  try {
+    const apolloClient = initializeApollo();
+    const { data } = await apolloClient.query<GetUserByIdQuery>({
+      query: GET_USERBY_ID,
+      variables: { id: params.id },
+    });
+    return {
+      props: {
+        user: data.users_by_pk,
+      },
+      revalidate: 1,
+    };
+  } catch (error) {
+    console.warn('Failed to fetch user data during build:', error);
+    return {
+      props: {
+        user: null,
+      },
+      revalidate: 1,
+    };
+  }
 };

@@ -32,12 +32,20 @@ const HasuraSSG: FC<Props> = ({ users }) => {
 export default HasuraSSG;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = initializeApollo();
-  const { data } = await apolloClient.query<GetUsersQuery>({
-    query: GET_USERS,
-  });
-  return {
-    props: { users: data.users },
-    revalidate: 1,
-  };
+  try {
+    const apolloClient = initializeApollo();
+    const { data } = await apolloClient.query<GetUsersQuery>({
+      query: GET_USERS,
+    });
+    return {
+      props: { users: data.users },
+      revalidate: 1,
+    };
+  } catch (error) {
+    console.warn('Failed to fetch users during build:', error);
+    return {
+      props: { users: [] },
+      revalidate: 1,
+    };
+  }
 };
