@@ -5,14 +5,11 @@
 pre-commit:
   parallel: true
   commands:
-    format-check:
-      run: echo "✅ コードフォーマットチェック完了"
-      stage_fixed: false
     # 将来的にはESLintやPrettierを追加可能
-    # lint:
-    #   run: npx eslint --fix {staged_files}
-    #   glob: "*.{js,jsx,ts,tsx}"
-    #   stage_fixed: true
+    lint:
+      run: npx eslint --fix {staged_files}
+      glob: "*.{js,jsx,ts,tsx}"
+      stage_fixed: true
 
 # pre-push:
 #   parallel: false
