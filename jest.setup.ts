@@ -1,7 +1,7 @@
 // jest.setup.ts
 import '@testing-library/jest-dom';
 import { fetch, Request, Response, Headers } from 'cross-fetch';
-import { TransformStream } from 'web-streams-polyfill';
+import { TransformStream, ReadableStream, WritableStream } from 'web-streams-polyfill';
 
 global.fetch = fetch;
 global.Request = Request;
@@ -20,6 +20,12 @@ if (typeof global.TextDecoder === 'undefined') {
 }
 if (typeof global.TransformStream === 'undefined') {
   global.TransformStream = TransformStream as typeof globalThis.TransformStream;
+}
+if (typeof global.ReadableStream === 'undefined') {
+  global.ReadableStream = ReadableStream as typeof globalThis.ReadableStream;
+}
+if (typeof global.WritableStream === 'undefined') {
+  global.WritableStream = WritableStream as typeof globalThis.WritableStream;
 }
 
 // BroadcastChannelのモック実装

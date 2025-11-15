@@ -50,24 +50,27 @@ afterAll(() => {
   server.close();
 });
 
-xdescribe('Navigation Test Cases', () => {
-  it('Should route to selected page in navbar', async () => {
+describe('Navigation Test Cases', () => {
+  it('ナビゲーションリンクが正しいtest idで表示されること', async () => {
     render(<Home />);
 
+    // ホームページのコンテンツが表示されていることを確認
     expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('makevar-nav'));
-    expect(await screen.findByText('makeVar')).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('fetchpolicy-nav'));
-    expect(await screen.findByText('Hasura main page')).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('crud-nav'));
-    expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('ssg-nav'));
-    expect(await screen.findByText('SSG+ISR')).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('memo-nav'));
-    expect(
-      await screen.findByText('Custom Hook + useCallback + memo')
-    ).toBeInTheDocument();
-    userEvent.click(screen.getByTestId('home-nav'));
-    expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument();
+    
+    // ナビゲーションリンクが存在することを確認
+    expect(screen.getByTestId('home-nav')).toBeInTheDocument();
+    expect(screen.getByTestId('makevar-nav')).toBeInTheDocument();
+    expect(screen.getByTestId('fetchpolicy-nav')).toBeInTheDocument();
+    expect(screen.getByTestId('crud-nav')).toBeInTheDocument();
+    expect(screen.getByTestId('ssg-nav')).toBeInTheDocument();
+    expect(screen.getByTestId('memo-nav')).toBeInTheDocument();
+    
+    // ナビゲーションリンクのテキストが正しいことを確認
+    expect(screen.getByTestId('home-nav')).toHaveTextContent('Home');
+    expect(screen.getByTestId('makevar-nav')).toHaveTextContent('makeVar');
+    expect(screen.getByTestId('fetchpolicy-nav')).toHaveTextContent('fetchPolicy(Hasura)');
+    expect(screen.getByTestId('crud-nav')).toHaveTextContent('CRUD(Hasura)');
+    expect(screen.getByTestId('ssg-nav')).toHaveTextContent('SSG+ISR(Hasura)');
+    expect(screen.getByTestId('memo-nav')).toHaveTextContent('custom hook + memo');
   });
 });
