@@ -17,6 +17,7 @@
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [MSW (Mock Service Worker)](https://mswjs.io/)
 - [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+- [Lefthook](https://github.com/evilmartians/lefthook) - Gitフック管理
 - [pnpm](https://pnpm.io/)
 
 ## セットアップ手順

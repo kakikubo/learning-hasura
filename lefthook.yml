@@ -1,0 +1,34 @@
+# lefthook.yml
+# GitフックをLefthookで管理
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  commands:
+    # 将来的にはESLintやPrettierを追加可能
+    lint:
+      run: npx eslint --fix {staged_files}
+      glob: "*.{js,jsx,ts,tsx}"
+      stage_fixed: true
+
+# pre-push:
+#   parallel: false
+#   commands:
+#     echo-push:
+#       run: echo "✅ プッシュ前チェック開始..."
+#     test:
+#       run: pnpm test
+#     build:
+#       run: pnpm build
+
+# コミットメッセージのフォーマットチェック（オプション）
+# commit-msg:
+#   commands:
+#     conventional-commit:
+#       run: |
+#         if ! grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+" {1}; then
+#           echo "❌ コミットメッセージは次の形式で書いてください:"
+#           echo "   type(scope): description"
+#           echo "例: feat(auth): add login functionality"
+#           exit 1
+#         fi

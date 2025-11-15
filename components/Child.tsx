@@ -4,7 +4,7 @@ interface Props {
   printMsg: () => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>;
 }
-// eslint-disable-next-line react/display-name
+ 
 export const Child: FC<Props> = memo(({ printMsg }) => {
   return (
     <>

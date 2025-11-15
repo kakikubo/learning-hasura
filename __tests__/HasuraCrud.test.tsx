@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import React, { act } from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
@@ -67,7 +67,7 @@ describe('Hasura CRUD Test Cases', () => {
 
     await act(async () => {
       render(
-        <MockedProvider mocks={mocks} addTypename={false}>
+        <MockedProvider mocks={mocks}>
           <HasuraCRUD />
         </MockedProvider>
       );

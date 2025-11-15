@@ -20,7 +20,7 @@ const createApolloClient = () => {
     cache: new InMemoryCache(),
   });
 };
-export const initializeApollo = (initialState = null) => {
+export const initializeApollo = (_initialState = null) => {
   const _apolloClient = apolloClient ?? createApolloClient();
   // SSGやSSRの場合は「常に」新しくApollo Clientを作成する
   if (typeof window === 'undefined') return _apolloClient;
