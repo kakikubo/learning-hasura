@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
+    "format": "npx prettier --write .",
     "test": "NODE_ENV=test jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml",
     "lefthook:install": "lefthook install",
