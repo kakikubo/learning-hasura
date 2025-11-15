@@ -1,5 +1,6 @@
 // jest.setup.ts
 import '@testing-library/jest-dom';
+// @ts-ignore: cross-fetch type definitions may not be available
 import { fetch, Request, Response, Headers } from 'cross-fetch';
 import {
   TransformStream,

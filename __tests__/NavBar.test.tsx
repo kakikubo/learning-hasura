@@ -24,7 +24,7 @@ import Home from '../pages/index';
 //   },
 // }));
 jest.mock('next/link', () => {
-  return ({ children }) => {
+  return ({ children }: { children: React.ReactNode }) => {
     return children;
   };
 });

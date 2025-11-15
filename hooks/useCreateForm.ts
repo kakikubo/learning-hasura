@@ -7,15 +7,17 @@ export const useCreateForm = () => {
   const [text, setText] = useState('');
   const [username, setUsername] = useState('');
   const [insert_users_one] = useMutation<CreateUserMutation>(CREATE_USER, {
-    update(cache, { data: { insert_users_one } }) {
-      const cacheId = cache.identify(insert_users_one);
-      cache.modify({
-        fields: {
-          users(existingUsers, { toReference }) {
-            return [toReference(cacheId), ...existingUsers];
+    update(cache, { data }) {
+      if (data?.insert_users_one) {
+        const cacheId = cache.identify(data.insert_users_one);
+        cache.modify({
+          fields: {
+            users(existingUsers, { toReference }) {
+              return cacheId ? [toReference(cacheId), ...existingUsers] : existingUsers;
+            },
           },
-        },
-      });
+        });
+      }
     },
   });
   const handleTextChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +39,7 @@ export const useCreateForm = () => {
           },
         });
       } catch (err) {
-        alert(err.message);
+        alert(err instanceof Error ? err.message : 'An error occurred');
       }
       setUsername('');
     },
