@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useQuery } from "@apollo/client/react";
+import { useQuery } from '@apollo/client/react';
 import { GET_USERS } from '../queries/queries';
 import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '@/components/Layout';

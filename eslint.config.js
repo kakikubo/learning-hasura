@@ -16,8 +16,8 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       globals: {
         console: 'readonly',
@@ -39,13 +39,13 @@ export default [
         // Browser APIs
         alert: 'readonly',
         setTimeout: 'readonly',
-        clearTimeout: 'readonly'
-      }
+        clearTimeout: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': typescript,
-      'react': react,
-      'react-hooks': reactHooks
+      react: react,
+      'react-hooks': reactHooks,
     },
     rules: {
       // 基本的なJavaScript/TypeScriptルール
@@ -56,8 +56,8 @@ export default [
         'error',
         {
           argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_'
-        }
+          varsIgnorePattern: '^_',
+        },
       ],
 
       // React関連のルール
@@ -65,18 +65,22 @@ export default [
       'react/jsx-uses-vars': 'error',
       'react/react-in-jsx-scope': 'off', // Next.jsでは不要
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
+      'react-hooks/exhaustive-deps': 'warn',
     },
     settings: {
       react: {
-        version: 'detect'
-      }
-    }
+        version: 'detect',
+      },
+    },
   },
 
   // Node.js設定ファイル用の設定
   {
-    files: ['**/*.config.{js,ts}', '**/jest.*.{js,ts}', '**/__mocks__/**/*.{js,ts}'],
+    files: [
+      '**/*.config.{js,ts}',
+      '**/jest.*.{js,ts}',
+      '**/__mocks__/**/*.{js,ts}',
+    ],
     languageOptions: {
       globals: {
         // Node.js globals
@@ -88,13 +92,13 @@ export default [
         // Jest globals for setup files
         jest: 'readonly',
         setTimeout: 'readonly',
-        clearTimeout: 'readonly'
-      }
+        clearTimeout: 'readonly',
+      },
     },
     rules: {
       'no-console': 'off',
-      '@typescript-eslint/no-unused-vars': 'off'
-    }
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
   },
 
   // テストファイル用の設定
@@ -112,13 +116,13 @@ export default [
         afterAll: 'readonly',
         afterEach: 'readonly',
         jest: 'readonly',
-        waitFor: 'readonly'
-      }
+        waitFor: 'readonly',
+      },
     },
     rules: {
       'no-console': 'off',
-      '@typescript-eslint/no-unused-vars': 'off'
-    }
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
   },
 
   // 除外設定
@@ -132,7 +136,7 @@ export default [
       '*.config.js',
       '*.config.mjs',
       '*.config.cjs',
-      'types/generated/**'
-    ]
-  }
+      'types/generated/**',
+    ],
+  },
 ];

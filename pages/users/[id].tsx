@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { ChevronDoubleLeftIcon } from '@heroicons/react/20/solid';

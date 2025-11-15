@@ -9,7 +9,6 @@ import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import HasuraMain from '../pages/hasura-main';
 
-
 import { GET_USERS } from '../queries/queries';
 
 // まず、モックでApollo Clientを作成するために必要なパッケージをインポートします
