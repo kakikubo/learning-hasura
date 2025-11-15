@@ -13,7 +13,7 @@ interface Props {
     }>
   >;
 }
- 
+
 export const UserItem: FC<Props> = memo(
   ({ user, delete_users_by_pk, setEditedUser }) => {
     console.log('UserItem rendered');

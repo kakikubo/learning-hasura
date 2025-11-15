@@ -14,18 +14,18 @@ interface Props {
 
 const HasuraSSG: FC<Props> = ({ users }) => {
   return (
-      <Layout title="Hasura SSG">
-        <p className="mb-3 font-bold">SSG+ISR</p>
-        {users?.map((user) => {
-          return (
-              <Link key={user.id} href={`/users/${user.id}`}>
-                <p className="my-1 cursor-pointer" data-testid={`link-${user.id}`}>
-                  {user.name}
-                </p>
-              </Link>
-          );
-        })}
-      </Layout>
+    <Layout title="Hasura SSG">
+      <p className="mb-3 font-bold">SSG+ISR</p>
+      {users?.map((user) => {
+        return (
+          <Link key={user.id} href={`/users/${user.id}`}>
+            <p className="my-1 cursor-pointer" data-testid={`link-${user.id}`}>
+              {user.name}
+            </p>
+          </Link>
+        );
+      })}
+    </Layout>
   );
 };
 

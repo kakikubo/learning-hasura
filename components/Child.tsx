@@ -4,7 +4,7 @@ interface Props {
   printMsg: () => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>;
 }
- 
+
 export const Child: FC<Props> = memo(({ printMsg }) => {
   return (
     <>

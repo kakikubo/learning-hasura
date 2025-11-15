@@ -118,7 +118,8 @@ pnpm add -D msw@0.35.0 next-page-tester jest @testing-library/react @types/jest 
 1. 空の`tsconfig.json`を作成: `touch tsconfig.json`
 2. TypeScript 関連の型定義をインストール:
 
-    `pnpm add -D typescript @types/react @types/node`
+   `pnpm add -D typescript @types/react @types/node`
+
 3. `pnpm dev`を実行し、Next.js に`tsconfig.json`を自動生成させます。
 4. `.js`ファイルを`.tsx`にリネームし、必要に応じて内容を修正します。
 
@@ -202,7 +203,6 @@ pnpm gen-types
 ```
 
 - **`ReferenceError: setImmediate is not defined`**:
-
   1. `setimmediate`パッケージをインストール: `pnpm add setimmediate`
   2. テストファイルの先頭でインポート: `import 'setimmediate'`
 

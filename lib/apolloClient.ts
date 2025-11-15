@@ -1,8 +1,4 @@
-import {
-  ApolloClient,
-  HttpLink,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import 'cross-fetch/polyfill';
 
 // export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';

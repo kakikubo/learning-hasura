@@ -1272,18 +1272,14 @@ export const GetUsersDocument = gql`
  *   },
  * });
  */
-export function useGetUsersQuery(
-  baseOptions?: any
-) {
+export function useGetUsersQuery(baseOptions?: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
     options
   );
 }
-export function useGetUsersLazyQuery(
-  baseOptions?: any
-) {
+export function useGetUsersLazyQuery(baseOptions?: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
     GetUsersDocument,
@@ -1318,18 +1314,14 @@ export const GetUserIdsDocument = gql`
  *   },
  * });
  */
-export function useGetUserIdsQuery(
-  baseOptions?: any
-) {
+export function useGetUserIdsQuery(baseOptions?: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
     options
   );
 }
-export function useGetUserIdsLazyQuery(
-  baseOptions?: any
-) {
+export function useGetUserIdsLazyQuery(baseOptions?: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useLazyQuery<GetUserIdsQuery, GetUserIdsQueryVariables>(
     GetUserIdsDocument,
@@ -1367,18 +1359,14 @@ export const GetUserByIdDocument = gql`
  *   },
  * });
  */
-export function useGetUserByIdQuery(
-  baseOptions: any
-) {
+export function useGetUserByIdQuery(baseOptions: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,
     options
   );
 }
-export function useGetUserByIdLazyQuery(
-  baseOptions?: any
-) {
+export function useGetUserByIdLazyQuery(baseOptions?: any) {
   const options = { ...defaultOptions, ...baseOptions };
   return useLazyQuery<GetUserByIdQuery, GetUserByIdQueryVariables>(
     GetUserByIdDocument,

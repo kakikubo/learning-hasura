@@ -1,5 +1,5 @@
 import React, { FC, useState, FormEvent } from 'react';
-import { useMutation, useQuery } from "@apollo/client/react";
+import { useMutation, useQuery } from '@apollo/client/react';
 import {
   GET_USERS,
   CREATE_USER,
