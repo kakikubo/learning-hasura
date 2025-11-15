@@ -49,11 +49,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { data } = await apolloClient.query<GetUserIdsQuery>({
       query: GET_USERIDS,
     });
-    const paths = data.users.map((user) => ({
+    const paths = data?.users?.map((user) => ({
       params: {
         id: user.id,
       },
-    }));
+    })) || [];
     return {
       paths,
       fallback: true,
@@ -68,6 +68,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
+    if (!params?.id) {
+      throw new Error('No ID parameter provided');
+    }
     const apolloClient = initializeApollo();
     const { data } = await apolloClient.query<GetUserByIdQuery>({
       query: GET_USERBY_ID,
@@ -75,7 +78,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     });
     return {
       props: {
-        user: data.users_by_pk,
+        user: data?.users_by_pk || null,
       },
       revalidate: 1,
     };

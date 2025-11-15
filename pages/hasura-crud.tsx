@@ -22,28 +22,32 @@ const HasuraCRUD: FC = () => {
   });
   const [update_users_by_pk] = useMutation<UpdateUserMutation>(UPDATE_USER);
   const [insert_users_one] = useMutation<CreateUserMutation>(CREATE_USER, {
-    update(cache, { data: { insert_users_one } }) {
-      const cacheId = cache.identify(insert_users_one);
-      cache.modify({
-        fields: {
-          users(existingUsers, { toReference }) {
-            return [toReference(cacheId), ...existingUsers];
+    update(cache, { data }) {
+      if (data?.insert_users_one) {
+        const cacheId = cache.identify(data.insert_users_one);
+        cache.modify({
+          fields: {
+            users(existingUsers, { toReference }) {
+              return cacheId ? [toReference(cacheId), ...existingUsers] : existingUsers;
+            },
           },
-        },
-      });
+        });
+      }
     },
   });
   const [delete_users_by_pk] = useMutation<DeleteUserMutation>(DELETE_USER, {
-    update(cache, { data: { delete_users_by_pk } }) {
-      cache.modify({
-        fields: {
-          users(existingUsers, { readField }) {
-            return existingUsers.filter(
-              (user) => delete_users_by_pk.id !== readField('id', user)
-            );
+    update(cache, { data }) {
+      if (data?.delete_users_by_pk) {
+        cache.modify({
+          fields: {
+            users(existingUsers, { readField }) {
+              return existingUsers.filter(
+                (user: any) => data.delete_users_by_pk!.id !== readField('id', user)
+              );
+            },
           },
-        },
-      });
+        });
+      }
     },
   });
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -57,7 +61,7 @@ const HasuraCRUD: FC = () => {
           },
         });
       } catch (err) {
-        alert(err.message);
+        alert(err instanceof Error ? err.message : 'An error occurred');
       }
       setEditedUser({ id: '', name: '' });
     } else {
@@ -68,7 +72,7 @@ const HasuraCRUD: FC = () => {
           },
         });
       } catch (err) {
-        alert(err.message);
+        alert(err instanceof Error ? err.message : 'An error occurred');
       }
       setEditedUser({ id: '', name: '' });
     }
@@ -100,7 +104,7 @@ const HasuraCRUD: FC = () => {
         </button>
       </form>
 
-      {data?.users.map((user) => {
+      {data?.users.map((user: { id: any; name: string; created_at: any }) => {
         return (
           <UserItem
             key={user.id}

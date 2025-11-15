@@ -27,7 +27,7 @@ afterAll(() => {
 jest.mock(
   'next/link',
   () =>
-    ({ children }) =>
+    ({ children }: { children: React.ReactNode }) =>
       children
 );
 jest.mock('next/router', () => ({

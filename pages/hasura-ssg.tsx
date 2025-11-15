@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
       query: GET_USERS,
     });
     return {
-      props: { users: data.users },
+      props: { users: data?.users || [] },
       revalidate: 1,
     };
   } catch (error) {
