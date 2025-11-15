@@ -5,7 +5,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import "@testing-library/jest-dom";
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 import { setupServer } from "msw/node";
 import { handlers } from "../mock/handlers";
 import "setimmediate";
@@ -55,7 +55,7 @@ describe("Navigation Test Cases", () => {
 	it("ナビゲーションリンクが正しいtest idで表示されること", async () => {
 		render(<Home />);
 
-		// ホームページのコンテンツが表示されていることを確認(test)
+		// ホームページのコンテンツが表示されていることを確認(test2)
 		      expect(await screen.findByText("Next.js + GraphQL")).toBeInTheDocument();
 
 		// ナビゲーションリンクが存在することを確認

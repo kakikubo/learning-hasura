@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useQuery } from "@apollo/client/react";
 import { GET_USERS } from '../queries/queries';
-import { GetUsersQuery, Users_Constraint } from '../types/generated/graphql';
+import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '@/components/Layout';
 import { LinkComponent } from '@/components/LinkComponent';
 
