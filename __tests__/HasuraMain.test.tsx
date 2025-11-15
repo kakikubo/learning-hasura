@@ -69,7 +69,7 @@ describe('Hasura Fetch Test Cases', () => {
     ];
     // MockedProviderを使用してHasuraMainコンポーネントをラップ
     render(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={mocks}>
         <HasuraMain />
       </MockedProvider>
     );

@@ -67,7 +67,7 @@ describe('Hasura CRUD Test Cases', () => {
 
     await act(async () => {
       render(
-        <MockedProvider mocks={mocks} addTypename={false}>
+        <MockedProvider mocks={mocks}>
           <HasuraCRUD />
         </MockedProvider>
       );
