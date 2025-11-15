@@ -1,0 +1,36 @@
+# lefthook.yml
+# GitフックをLefthookで管理
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: pnpm lint --fix {staged_files}
+      stage_fixed: true
+    types:
+      glob: "*.{ts,tsx}"
+      run: pnpm run gen-types
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: pnpm test
+    build:
+      run: pnpm build
+
+# commit-msg:
+#   commands:
+#     conventional-commit:
+#       run: |
+#         # 簡単なコミットメッセージフォーマットチェック
+#         # feat:, fix:, docs:, style:, refactor:, test:, chore: で始まっているかチェック
+#         if ! grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+" {1}; then
+#           echo "❌ コミットメッセージは次の形式で書いてください: type(scope): description"
+#           echo "例: feat(auth): add login functionality"
+#           echo "利用可能なtype: feat, fix, docs, style, refactor, test, chore"
+#           exit 1
+#         fi
