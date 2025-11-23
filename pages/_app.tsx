@@ -7,9 +7,11 @@ import { initializeApollo } from '../lib/apolloClient';
 function MyApp({ Component, pageProps }: AppProps) {
   const client = initializeApollo();
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <React.StrictMode>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </React.StrictMode>
   );
 }
 
