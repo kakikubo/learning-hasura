@@ -19,7 +19,12 @@ const config = {
         useESM: true,
       },
     ],
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx)$': [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   moduleNameMapper: {
