@@ -15,10 +15,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "ignoreDeprecations": "5.0",
-    "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["./components/*"]
     }
   },
   "include": ["next-env.d.ts", "types/global.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts"],
