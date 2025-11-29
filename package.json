@@ -10,9 +10,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --fix",
-    "lint:check": "eslint .",
-    "format": "npx prettier --write .",
+    "lint": "biome check --write .",
+    "lint:check": "biome check .",
+    "lint:eslint": "eslint . --fix",
+    "lint:eslint:check": "eslint .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "format:prettier": "npx prettier --write .",
+    "format:prettier:check": "npx prettier --check .",
     "test": "NODE_ENV=test jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml",
     "lefthook:install": "lefthook install",
@@ -31,7 +36,7 @@
     "setimmediate": "^1.0.5"
   },
   "devDependencies": {
-
+    "@biomejs/biome": "^2.3.8",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.39.1",
     "@graphql-codegen/cli": "^6.0.0",
@@ -51,7 +56,6 @@
     "@typescript-eslint/eslint-plugin": "^8.46.4",
     "@typescript-eslint/parser": "^8.46.4",
     "autoprefixer": "^10.4.20",
-
     "cross-fetch": "^4.0.0",
     "eslint": "^9.1.0",
     "eslint-config-next": "^16.0.0",
