@@ -17,8 +17,38 @@
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [MSW (Mock Service Worker)](https://mswjs.io/)
 - [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+- [Biome](https://biomejs.dev/) - 高速なリンター・フォーマッター
 - [Lefthook](https://github.com/evilmartians/lefthook) - Gitフック管理
 - [pnpm](https://pnpm.io/)
+
+> **📝 Note**: このプロジェクトは2025年にESLintとPrettierからBiomeに移行しました。詳細は[Biome移行ガイド](./BIOME_MIGRATION.md)を参照してください。
+
+## コード品質ツール
+
+このプロジェクトでは、コード品質を維持するために[Biome](https://biomejs.dev/)を使用しています。
+
+### 利用可能なコマンド
+
+```bash
+# リンティングチェック（修正なし）
+pnpm lint:check
+
+# リンティングチェックと自動修正
+pnpm lint
+
+# Biomeでフォーマット
+pnpm format
+
+# Biomeでフォーマットチェックのみ
+pnpm format:check
+```
+
+### 自動チェック
+
+- **Git hooks**: コミット前に自動的にBiomeチェックが実行されます（Lefthook経由）
+- **CI/CD**: GitHub Actionsでプルリクエスト時に自動チェックが実行されます
+
+詳細な使用方法とトラブルシューティングについては、[Biome移行ガイド](./BIOME_MIGRATION.md)を参照してください。
 
 ## セットアップ手順
 
@@ -104,14 +134,9 @@ pnpm add -D msw@0.35.0 next-page-tester jest @testing-library/react @types/jest 
 }
 ```
 
-- **Prettier (`.prettierrc`)**:
+- **Biome (`biome.json`)**:
 
-```json
-{
-  "singleQuote": true,
-  "semi": true
-}
-```
+プロジェクトルートに`biome.json`が配置されています。リンティングとフォーマッティングの設定が含まれています。
 
 #### 3.4. TypeScript の導入
 
@@ -189,7 +214,7 @@ pnpm gen-types
 
 - [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Biome](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
 
 ### Jest 関連のエラー
 
