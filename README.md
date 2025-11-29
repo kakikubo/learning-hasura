@@ -21,7 +21,7 @@
 - [Lefthook](https://github.com/evilmartians/lefthook) - Gitフック管理
 - [pnpm](https://pnpm.io/)
 
-> **📝 Note**: このプロジェクトは2024年にESLintとPrettierからBiomeに移行しました。詳細は[Biome移行ガイド](./BIOME_MIGRATION.md)を参照してください。
+> **📝 Note**: このプロジェクトは2025年にESLintとPrettierからBiomeに移行しました。詳細は[Biome移行ガイド](./BIOME_MIGRATION.md)を参照してください。
 
 ## コード品質ツール
 
