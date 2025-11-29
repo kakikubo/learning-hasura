@@ -85,7 +85,7 @@
   - `pnpm build`を実行し、本番用ビルドが成功することを確認
   - _Requirements: 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 9. ESLintの依存関係を削除
+- [x] 9. ESLintの依存関係を削除
   - ESLint関連パッケージをアンインストール
   - `eslint.config.js`を削除
   - ESLint関連のpackage.jsonスクリプト（`lint:eslint`、`lint:eslint:check`）を削除
