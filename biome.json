@@ -7,13 +7,25 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "experimentalScannerIgnores": [
-      "node_modules",
-      ".next",
-      "types/generated",
-      "pnpm-lock.yaml",
-      "*.config.js",
-      "*.config.mjs"
+    "includes": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.json",
+      "!**/node_modules/**",
+      "!**/.next/**",
+      "!**/out/**",
+      "!**/build/**",
+      "!**/dist/**",
+      "!**/types/generated/**",
+      "!**/pnpm-lock.yaml",
+      "!**/*.config.js",
+      "!**/*.config.mjs",
+      "!**/*.config.cjs",
+      "!**/.git/**",
+      "!**/coverage/**",
+      "!**/tsconfig.tsbuildinfo"
     ]
   },
   "formatter": {
@@ -37,7 +49,8 @@
         "useExhaustiveDependencies": "warn"
       },
       "style": {
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "useConst": "error"
       },
       "suspicious": {
         "noDebugger": "error",
@@ -46,7 +59,8 @@
           "options": {
             "allow": ["warn", "error", "info"]
           }
-        }
+        },
+        "noExplicitAny": "off"
       }
     }
   },
@@ -55,7 +69,72 @@
       "quoteStyle": "single",
       "semicolons": "always",
       "trailingCommas": "es5",
-      "arrowParentheses": "always"
+      "arrowParentheses": "always",
+      "quoteProperties": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false
+    },
+    "globals": [
+      "console",
+      "process",
+      "global",
+      "Buffer",
+      "document",
+      "window",
+      "HTMLElement",
+      "HTMLFormElement",
+      "HTMLInputElement",
+      "Event",
+      "MessageEvent",
+      "BroadcastChannel",
+      "alert",
+      "setTimeout",
+      "clearTimeout",
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "beforeAll",
+      "beforeEach",
+      "afterAll",
+      "afterEach",
+      "jest",
+      "waitFor"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.config.{js,ts}",
+        "**/jest.*.{js,ts}",
+        "**/__mocks__/**/*.{js,ts}"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/*.test.{js,jsx,ts,tsx}",
+        "**/__tests__/**/*.{js,jsx,ts,tsx}"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off"
+          }
+        }
+      }
     }
-  }
+  ]
 }
