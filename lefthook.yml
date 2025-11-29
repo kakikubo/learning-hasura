@@ -5,11 +5,16 @@
 pre-commit:
   parallel: true
   commands:
-    # 将来的にはESLintやPrettierを追加可能
-    lint:
-      run: npx eslint --fix {staged_files}
+    # Biomeでリンティングとフォーマットを実行
+    biome-check:
+      run: biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
       glob: '*.{js,jsx,ts,tsx}'
       stage_fixed: true
+    # 代替オプション: Prettierでフォーマット（必要に応じてコメント解除）
+    # prettier:
+    #   run: npx prettier --write {staged_files}
+    #   glob: '*.{js,jsx,ts,tsx,json,css,md}'
+    #   stage_fixed: true
 # pre-push:
 #   parallel: false
 #   commands:

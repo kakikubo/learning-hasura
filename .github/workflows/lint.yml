@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint:
-    name: ESLint Check
+    name: Biome Lint Check
     runs-on: ubuntu-latest
 
     steps:
@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run ESLint
+      - name: Run Biome Lint
         run: |
-          echo "🔍 Running ESLint..."
+          echo "🔍 Running Biome lint check..."
           pnpm lint:check
-          echo "✅ ESLint check completed successfully"
+          echo "✅ Biome lint check completed successfully"
 
       - name: TypeScript Type Check
         run: |
