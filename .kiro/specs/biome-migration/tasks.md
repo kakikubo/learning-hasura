@@ -91,7 +91,7 @@
   - ESLint関連のpackage.jsonスクリプト（`lint:eslint`、`lint:eslint:check`）を削除
   - _Requirements: 4.1, 4.2_
 
-- [ ] 10. Prettierの依存関係を削除（オプション）
+- [x] 10. Prettierの依存関係を削除（オプション）
   - Prettierパッケージをアンインストール
   - `.prettierrc`を削除
   - Prettier関連のpackage.jsonスクリプト（`format:prettier`、`format:prettier:check`）を削除
@@ -99,7 +99,7 @@
   - 注: この手順は、Biomeのフォーマッターを完全に採用する場合のみ実行
   - _Requirements: 4.3_
 
-- [ ] 11. ドキュメントの作成
+- [x] 11. ドキュメントの作成
   - 移行手順を記録したドキュメントを作成
   - Biomeの使用方法（新しいリンティングコマンド）を説明
   - ESLintからBiomeへの主要な変更点を記載
@@ -107,7 +107,7 @@
   - トラブルシューティングガイドを追加
   - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-- [ ] 12. 最終チェックポイント
+- [x] 12. 最終チェックポイント
   - すべてのテストが合格していることを確認
   - 開発環境とCI/CD環境の両方でBiomeが正常に動作することを確認
   - チームメンバーに移行完了を通知
