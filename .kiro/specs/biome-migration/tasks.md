@@ -52,7 +52,7 @@
   - 新しいスクリプトが正常に動作することを確認
   - _Requirements: 1.4, 4.4_
 
-- [ ] 6. Lefthook設定の更新
+- [x] 6. Lefthook設定の更新
   - `lefthook.yml`を確認し、現在のpre-commit hooksを特定
   - ESLintコマンドをBiomeリンティングコマンドに置き換え
   - Biomeフォーマットコマンドを追加（デフォルトのフォーマッター）
@@ -60,7 +60,7 @@
   - `lefthook install`を実行してhooksを再インストール
   - _Requirements: 5.1, 5.2, 5.3_
 
-- [ ] 6.1 Git hooksのテスト
+- [x] 6.1 Git hooksのテスト
   - 意図的にリンティングエラーを含むコードでコミットを試行
   - lefthookがBiomeリンティングとフォーマットを実行し、エラーがある場合コミットが拒否されることを確認
   - _Requirements: 5.4_
