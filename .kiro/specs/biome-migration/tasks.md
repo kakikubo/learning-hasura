@@ -91,7 +91,7 @@
   - ESLint関連のpackage.jsonスクリプト（`lint:eslint`、`lint:eslint:check`）を削除
   - _Requirements: 4.1, 4.2_
 
-- [ ] 10. Prettierの依存関係を削除（オプション）
+- [x] 10. Prettierの依存関係を削除（オプション）
   - Prettierパッケージをアンインストール
   - `.prettierrc`を削除
   - Prettier関連のpackage.jsonスクリプト（`format:prettier`、`format:prettier:check`）を削除
