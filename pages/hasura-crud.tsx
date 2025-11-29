@@ -28,7 +28,9 @@ const HasuraCRUD: FC = () => {
         cache.modify({
           fields: {
             users(existingUsers, { toReference }) {
-              return cacheId ? [toReference(cacheId), ...existingUsers] : existingUsers;
+              return cacheId
+                ? [toReference(cacheId), ...existingUsers]
+                : existingUsers;
             },
           },
         });
@@ -42,7 +44,8 @@ const HasuraCRUD: FC = () => {
           fields: {
             users(existingUsers, { readField }) {
               return existingUsers.filter(
-                (user: any) => data.delete_users_by_pk!.id !== readField('id', user)
+                (user: any) =>
+                  data.delete_users_by_pk!.id !== readField('id', user)
               );
             },
           },

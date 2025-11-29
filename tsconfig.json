@@ -19,6 +19,12 @@
       "@/components/*": ["./components/*"]
     }
   },
-  "include": ["next-env.d.ts", "types/global.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts"],
+  "include": [
+    "next-env.d.ts",
+    "types/global.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.config.ts"
+  ],
   "exclude": ["node_modules"]
 }

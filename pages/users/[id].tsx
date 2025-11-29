@@ -49,11 +49,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { data } = await apolloClient.query<GetUserIdsQuery>({
       query: GET_USERIDS,
     });
-    const paths = data?.users?.map((user) => ({
-      params: {
-        id: user.id,
-      },
-    })) || [];
+    const paths =
+      data?.users?.map((user) => ({
+        params: {
+          id: user.id,
+        },
+      })) || [];
     return {
       paths,
       fallback: true,
