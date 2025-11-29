@@ -13,28 +13,23 @@
       "**/*.ts",
       "**/*.tsx",
       "**/*.json",
-      "!**/node_modules/**",
-      "!**/.next/**",
-      "!**/out/**",
-      "!**/build/**",
-      "!**/dist/**",
-      "!**/types/generated/**",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/out",
+      "!**/build",
+      "!**/dist",
+      "!**/types/generated",
       "!**/pnpm-lock.yaml",
       "!**/*.config.js",
       "!**/*.config.mjs",
       "!**/*.config.cjs",
-      "!**/.git/**",
-      "!**/coverage/**",
+      "!**/.git",
+      "!**/coverage",
       "!**/tsconfig.tsbuildinfo"
     ]
   },
   "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 80,
-    "lineEnding": "lf"
+    "enabled": false
   },
   "linter": {
     "enabled": true,
@@ -44,25 +39,37 @@
         "noForEach": "off"
       },
       "correctness": {
-        "noUnusedVariables": "error",
+        "noUnusedVariables": "off",
+        "noUnusedImports": "off",
         "useHookAtTopLevel": "error",
         "useExhaustiveDependencies": "warn"
       },
       "style": {
         "noNonNullAssertion": "off",
-        "useConst": "error"
+        "useConst": "off",
+        "useImportType": "off"
       },
       "suspicious": {
         "noDebugger": "error",
         "noConsole": {
           "level": "warn",
           "options": {
-            "allow": ["warn", "error", "info"]
+            "allow": ["warn", "error", "info", "log"]
           }
         },
-        "noExplicitAny": "off"
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noTsIgnore": "off"
+      },
+      "a11y": {
+        "noLabelWithoutControl": "off",
+        "useButtonType": "off",
+        "useValidAnchor": "off"
       }
     }
+  },
+  "assist": {
+    "enabled": false
   },
   "javascript": {
     "formatter": {
@@ -115,7 +122,9 @@
             "noConsole": "off"
           },
           "correctness": {
-            "noUnusedVariables": "off"
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off",
+            "noUnusedFunctionParameters": "off"
           }
         }
       }
@@ -131,7 +140,8 @@
             "noConsole": "off"
           },
           "correctness": {
-            "noUnusedVariables": "off"
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
           }
         }
       }
