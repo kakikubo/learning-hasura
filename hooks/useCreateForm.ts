@@ -13,7 +13,9 @@ export const useCreateForm = () => {
         cache.modify({
           fields: {
             users(existingUsers, { toReference }) {
-              return cacheId ? [toReference(cacheId), ...existingUsers] : existingUsers;
+              return cacheId
+                ? [toReference(cacheId), ...existingUsers]
+                : existingUsers;
             },
           },
         });

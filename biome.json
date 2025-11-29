@@ -51,12 +51,7 @@
       },
       "suspicious": {
         "noDebugger": "error",
-        "noConsole": {
-          "level": "warn",
-          "options": {
-            "allow": ["warn", "error", "info", "log"]
-          }
-        },
+        "noConsole": "warn",
         "noExplicitAny": "off",
         "noArrayIndexKey": "off",
         "noTsIgnore": "off"
