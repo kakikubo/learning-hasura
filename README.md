@@ -57,8 +57,11 @@ pnpm format:check
 ### 利用可能なコマンド
 
 ```bash
-# 依存関係のセキュリティチェック
-pnpm security:check
+# ローカル環境でsafe-chainをセットアップ（初回のみ）
+pnpm security:setup
+
+# その後、通常通りpnpm installを実行すると自動的に保護されます
+pnpm install
 ```
 
 ### 自動チェック

@@ -23,13 +23,13 @@ jobs:
           node-version: '24'
           cache: 'pnpm'
 
-      - name: Run safe-chain security check
+      - name: Setup safe-chain
         run: |
-          echo "🔒 Running safe-chain security check..."
-          npx @aikidosec/safe-chain
-          echo "✅ Security check completed successfully"
+          echo "🔒 Setting up safe-chain..."
+          npx @aikidosec/safe-chain setup-ci
+          echo "✅ safe-chain setup completed"
 
-      - name: Install dependencies
+      - name: Install dependencies with safe-chain protection
         run: pnpm install --frozen-lockfile
 
       - name: Run Biome Lint
