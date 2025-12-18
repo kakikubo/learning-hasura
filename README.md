@@ -50,6 +50,25 @@ pnpm format:check
 
 詳細な使用方法とトラブルシューティングについては、[Biome移行ガイド](./BIOME_MIGRATION.md)を参照してください。
 
+## セキュリティ
+
+このプロジェクトでは、サプライチェーン攻撃から保護するために[safe-chain](https://github.com/AikidoSec/safe-chain)を使用しています。
+
+### 利用可能なコマンド
+
+```bash
+# ローカル環境でsafe-chainをセットアップ（初回のみ）
+pnpm security:setup
+
+# その後、通常通りpnpm installを実行すると自動的に保護されます
+pnpm install
+```
+
+### 自動チェック
+
+- **CI/CD**: GitHub Actionsで依存関係インストール前に自動的にセキュリティチェックが実行されます
+- 悪意あるパッケージやタイポスクワッティング攻撃を検出します
+
 ## セットアップ手順
 
 ### 1. Hasura バックエンドの構築

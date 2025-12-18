@@ -23,7 +23,12 @@ jobs:
         with:
           node-version-file: .tool-versions
           cache: 'pnpm'
-      - name: Install Dependencies
+      - name: Setup safe-chain
+        run: |
+          echo "🔒 Setting up safe-chain..."
+          npx @aikidosec/safe-chain setup-ci
+          echo "✅ safe-chain setup completed"
+      - name: Install Dependencies with safe-chain protection
         run: pnpm install --frozen-lockfile
       - name: Run test
         run: pnpm test

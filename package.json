@@ -16,6 +16,7 @@
     "format:check": "biome format .",
     "test": "NODE_ENV=test jest --env=jsdom --verbose",
     "gen-types": "graphql-codegen --config codegen.yml",
+    "security:setup": "npx @aikidosec/safe-chain setup",
     "lefthook:install": "lefthook install",
     "lefthook:uninstall": "lefthook uninstall"
   },
