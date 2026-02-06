@@ -55,7 +55,7 @@
     "jest-css-modules": "^2.1.0",
     "jest-environment-jsdom": "^30.0.0",
     "lefthook": "^2.0.4",
-    "msw": "^2.10.5",
+    "msw": "^2.12.9",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.12",
     "ts-jest": "^29.3.3",
