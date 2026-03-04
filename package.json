@@ -24,7 +24,7 @@
     "@apollo/client": "^4.0.0",
     "@heroicons/react": "^2.1.1",
     "cross-fetch": "^4.0.0",
-    "graphql": "^16.8.1",
+    "graphql": "^16.13.1",
     "graphql-tag": "^2.12.6",
     "next": "^16.0.0",
     "react": "^19.0.0",
