@@ -17,12 +17,15 @@ const config = {
       {
         tsconfig: 'tsconfig.jest.json',
         useESM: true,
+        diagnostics: false,
       },
     ],
     '^.+\\.(js|jsx)$': [
       'ts-jest',
       {
+        tsconfig: 'tsconfig.jest.json',
         useESM: true,
+        diagnostics: false,
       },
     ],
   },
