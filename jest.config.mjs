@@ -20,7 +20,8 @@ const config = {
         diagnostics: false,
       },
     ],
-    '^.+\\.(js|jsx|mjs)$': [
+    '^.+\\.mjs$': '<rootDir>/jest-esm-transformer.cjs',
+    '^.+\\.(js|jsx)$': [
       'ts-jest',
       {
         tsconfig: 'tsconfig.jest.json',
