@@ -24,13 +24,16 @@ if (typeof global.TextDecoder === 'undefined') {
   global.TextDecoder = TextDecoder as typeof globalThis.TextDecoder;
 }
 if (typeof global.TransformStream === 'undefined') {
-  global.TransformStream = TransformStream as typeof globalThis.TransformStream;
+  global.TransformStream =
+    TransformStream as unknown as typeof globalThis.TransformStream;
 }
 if (typeof global.ReadableStream === 'undefined') {
-  global.ReadableStream = ReadableStream as typeof globalThis.ReadableStream;
+  global.ReadableStream =
+    ReadableStream as unknown as typeof globalThis.ReadableStream;
 }
 if (typeof global.WritableStream === 'undefined') {
-  global.WritableStream = WritableStream as typeof globalThis.WritableStream;
+  global.WritableStream =
+    WritableStream as unknown as typeof globalThis.WritableStream;
 }
 
 // BroadcastChannelのモック実装
