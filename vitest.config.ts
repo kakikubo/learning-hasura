@@ -9,9 +9,9 @@ export default defineConfig({
     include: ['__tests__/**/*.test.{ts,tsx}'],
     exclude: ['node_modules', '.next'],
     css: false,
-    environmentOptions: {
-      jsdom: {
-        customExportConditions: ['node', 'node-addons'],
+    server: {
+      deps: {
+        inline: ['@testing-library/react'],
       },
     },
   },

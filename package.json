@@ -14,7 +14,7 @@
     "lint:check": "biome check .",
     "format": "biome format --write .",
     "format:check": "biome format .",
-    "test": "vitest run",
+    "test": "NODE_ENV=test vitest run",
     "test:watch": "vitest",
     "gen-types": "graphql-codegen --config codegen.yml",
     "security:setup": "npx @aikidosec/safe-chain setup",
