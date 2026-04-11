@@ -1,9 +1,5 @@
-/**
- * @jest-environment jsdom
- */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { setupServer } from 'msw/node';
 import userEvent from '@testing-library/user-event';
 import { handlers } from '../mock/handlers';
@@ -24,16 +20,13 @@ afterEach(() => {
 afterAll(() => {
   server.close();
 });
-jest.mock(
-  'next/link',
-  () =>
-    ({ children }: { children: React.ReactNode }) =>
-      children
-);
-jest.mock('next/router', () => ({
+vi.mock('next/link', () => ({
+  default: ({ children }: { children: React.ReactNode }) => children,
+}));
+vi.mock('next/router', () => ({
   useRouter() {
     return {
-      push: jest.fn(), // push関数のモック
+      push: vi.fn(),
     };
   },
 }));
