@@ -42,8 +42,8 @@ const config = {
   },
   rootDir: __dirname,
   transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs)/)',
-    'node_modules/.pnpm/(?!(msw|@mswjs)@)',
+    'node_modules/(?!(msw|@mswjs|rettime)/)',
+    'node_modules/.pnpm/(?!(msw|@mswjs|rettime)@)',
   ],
   modulePaths: ['<rootDir>/src'],
 };
