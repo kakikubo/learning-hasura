@@ -1,37 +1,21 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import '@testing-library/jest-dom';
-// import userEvent from "@testing-library/user-event";
 import { setupServer } from 'msw/node';
 import { handlers } from '../mock/handlers';
 import 'setimmediate';
 import Home from '../pages/index';
 
-// Jestに必要なモックをセットアップします
-// jest.mock('next/router', () => ({
-//   useRouter() {
-//     return {
-//       route: '/',
-//       pathname: '',
-//       query: '',
-//       asPath: '',
-//       push: jest.fn(), // 画面遷移をシミュレートするためのモック関数
-//     };
-//   },
-// }));
-jest.mock('next/link', () => {
-  return ({ children }: { children: React.ReactNode }) => {
-    return children;
+vi.mock('next/link', () => {
+  return {
+    default: ({ children }: { children: React.ReactNode }) => {
+      return children;
+    },
   };
 });
-jest.mock('next/router', () => ({
+vi.mock('next/router', () => ({
   useRouter() {
     return {
-      push: jest.fn(), // push関数のモック
+      push: vi.fn(),
     };
   },
 }));
