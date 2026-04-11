@@ -1,16 +1,16 @@
 /**
- * Custom Jest transformer for ESM .mjs files.
- * Converts ESM import/export to CommonJS require/module.exports
- * so Jest can process them without --experimental-vm-modules.
+ * ESM .mjs ファイル用のカスタム Jest トランスフォーマー。
+ * ESM の import/export を CommonJS の require/module.exports に変換し、
+ * --experimental-vm-modules なしで Jest が処理できるようにする。
  */
 'use strict';
 
 module.exports = {
   process(sourceText, sourcePath) {
-    // Convert import statements to require
+    // import 文を require に変換する
     let code = sourceText;
 
-    // Convert: import { X, Y } from "module"
+    // 変換: import { X, Y } from "module"
     code = code.replace(
       /import\s+\{([^}]+)\}\s+from\s+['"]([^'"]+)['"]\s*;?/g,
       (_, imports, mod) => {
@@ -31,19 +31,19 @@ module.exports = {
       },
     );
 
-    // Convert: import X from "module"
+    // 変換: import X from "module"
     code = code.replace(
       /import\s+(\w+)\s+from\s+['"]([^'"]+)['"]\s*;?/g,
       'const $1 = require("$2");',
     );
 
-    // Convert: import "module"
+    // 変換: import "module"
     code = code.replace(
       /import\s+['"]([^'"]+)['"]\s*;?/g,
       'require("$1");',
     );
 
-    // Convert: export { X, Y }
+    // 変換: export { X, Y }
     code = code.replace(
       /export\s+\{([^}]+)\}\s*;?/g,
       (_, exports) => {
@@ -59,7 +59,7 @@ module.exports = {
       },
     );
 
-    // Convert: export const/let/var/function/class
+    // 変換: export const/let/var/function/class
     code = code.replace(
       /export\s+(const|let|var|function|class)\s+/g,
       '$1 ',
