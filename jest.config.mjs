@@ -20,7 +20,7 @@ const config = {
         diagnostics: false,
       },
     ],
-    '^.+\\.(js|jsx)$': [
+    '^.+\\.(js|jsx|mjs)$': [
       'ts-jest',
       {
         tsconfig: 'tsconfig.jest.json',
@@ -36,14 +36,14 @@ const config = {
     '^until-async$': '<rootDir>/__mocks__/until-async.js',
     'until-async': '<rootDir>/__mocks__/until-async.js',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'json'],
   testEnvironmentOptions: {
     customExportConditions: ['node', 'node-addons'],
   },
   rootDir: __dirname,
   transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs|rettime)/)',
-    'node_modules/.pnpm/(?!(msw|@mswjs|rettime)@)',
+    'node_modules/(?!(\\.pnpm|msw|@mswjs|rettime)/)',
+    'node_modules/\\.pnpm/(?!(msw|@mswjs|rettime)@)',
   ],
   modulePaths: ['<rootDir>/src'],
 };
