@@ -2,6 +2,7 @@
 import '@testing-library/jest-dom';
 // @ts-ignore: cross-fetch type definitions may not be available
 import { fetch, Request, Response, Headers } from 'cross-fetch';
+import { TextEncoder, TextDecoder } from 'node:util';
 import {
   TransformStream,
   ReadableStream,
@@ -13,14 +14,10 @@ global.Request = Request;
 global.Response = Response;
 global.Headers = Headers;
 
-// Jest環境ではTextEncoder/TextDecoderがグローバルに定義されていないため、
-// utilパッケージから取得して設定
 if (typeof global.TextEncoder === 'undefined') {
-  const { TextEncoder } = require('util');
   global.TextEncoder = TextEncoder as typeof globalThis.TextEncoder;
 }
 if (typeof global.TextDecoder === 'undefined') {
-  const { TextDecoder } = require('util');
   global.TextDecoder = TextDecoder as typeof globalThis.TextDecoder;
 }
 if (typeof global.TransformStream === 'undefined') {
