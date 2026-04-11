@@ -9,7 +9,6 @@ const config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  setupFiles: ['<rootDir>/jest.setup-mocks.js'],
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+\\.(ts|tsx)$': [
@@ -20,7 +19,7 @@ const config = {
         diagnostics: false,
       },
     ],
-    '^.+\\.mjs$': '<rootDir>/jest-esm-transformer.cjs',
+    '^.+\\.mjs$': '<rootDir>/jest-esm-transformer.js',
     '^.+\\.(js|jsx)$': [
       'ts-jest',
       {
@@ -34,8 +33,6 @@ const config = {
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^until-async$': '<rootDir>/__mocks__/until-async.js',
-    'until-async': '<rootDir>/__mocks__/until-async.js',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'json'],
   testEnvironmentOptions: {
@@ -43,8 +40,8 @@ const config = {
   },
   rootDir: __dirname,
   transformIgnorePatterns: [
-    'node_modules/(?!(\\.pnpm|msw|@mswjs|rettime)/)',
-    'node_modules/\\.pnpm/(?!(msw|@mswjs|rettime)@)',
+    'node_modules/(?!(\\.pnpm|msw|@mswjs|rettime|until-async)/)',
+    'node_modules/\\.pnpm/(?!(msw|@mswjs|rettime|until-async)@)',
   ],
   modulePaths: ['<rootDir>/src'],
 };
