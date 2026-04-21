@@ -54,7 +54,7 @@
     "lefthook": "^2.0.4",
     "msw": "^2.10.5",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.12",
+    "tailwindcss": "^4.2.4",
     "typescript": "^6.0.0",
     "util": "^0.12.5",
     "vitest": "^4.1.4",
