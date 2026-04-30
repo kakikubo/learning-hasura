@@ -50,7 +50,7 @@
     "@types/react-dom": "^19.1.1",
     "autoprefixer": "^10.4.20",
     "cross-fetch": "^4.0.0",
-    "jsdom": "^29.0.2",
+    "jsdom": "^29.1.1",
     "lefthook": "^2.0.4",
     "msw": "^2.10.5",
     "postcss": "^8.5.3",
