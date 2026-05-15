@@ -75,7 +75,7 @@ pnpm install
 
 1. [Hasura Cloud](https://hasura.io/cloud/)にて、GitHub アカウントで認証し、新規プロジェクトを作成します。
 2. Heroku と連携してデータベースインスタンスを構築します。
-3. プロジェクトダッシュボード: [kakikubo-hasura](https://cloud.hasura.io/project/240cecde-58ae-4f75-a05f-1a3fc5b098d6/console/api/api-explorer)
+3. プロジェクトダッシュボード（`https://cloud.hasura.io/project/<your-project-id>/console`）から GraphQL エンドポイント URL を控えます。
 
 ### 2. Vercel へのデプロイ
 
