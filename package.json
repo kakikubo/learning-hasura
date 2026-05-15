@@ -58,6 +58,6 @@
     "typescript": "^6.0.0",
     "util": "^0.12.5",
     "vitest": "^4.1.4",
-    "web-streams-polyfill": "^4.0.0"
+    "web-streams-polyfill": "^4.3.0"
   }
 }
