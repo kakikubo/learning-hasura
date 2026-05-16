@@ -1,11 +1,19 @@
 import React, { FC, memo, Dispatch, SetStateAction } from 'react';
-import { Users, DeleteUserMutationFn } from '../types/generated/graphql';
+import type { MutationTuple } from '@apollo/client/react';
+import type {
+  Users,
+  DeleteUserMutation,
+  DeleteUserMutationVariables,
+} from '../types/generated/graphql';
 
 interface Props {
   user: {
     __typename?: 'users';
   } & Pick<Users, 'id' | 'name' | 'created_at'>;
-  delete_users_by_pk: DeleteUserMutationFn;
+  delete_users_by_pk: MutationTuple<
+    DeleteUserMutation,
+    DeleteUserMutationVariables
+  >[0];
   setEditedUser: Dispatch<
     SetStateAction<{
       id: string;

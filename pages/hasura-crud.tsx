@@ -10,6 +10,7 @@ import {
   GetUsersQuery,
   CreateUserMutation,
   DeleteUserMutation,
+  DeleteUserMutationVariables,
   UpdateUserMutation,
 } from '../types/generated/graphql';
 import { Layout } from '@/components/Layout';
@@ -37,7 +38,10 @@ const HasuraCRUD: FC = () => {
       }
     },
   });
-  const [delete_users_by_pk] = useMutation<DeleteUserMutation>(DELETE_USER, {
+  const [delete_users_by_pk] = useMutation<
+    DeleteUserMutation,
+    DeleteUserMutationVariables
+  >(DELETE_USER, {
     update(cache, { data }) {
       if (data?.delete_users_by_pk) {
         cache.modify({
