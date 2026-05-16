@@ -9,13 +9,7 @@ generates:
     plugins:
       - 'typescript'
       - 'typescript-operations'
-      - 'typescript-react-apollo'
     config:
-      apolloClientVersion: 4
-      gqlImport: '@apollo/client#gql'
-      withHooks: true
-      withComponent: false
-      withHOC: false
       strictScalars: true
       scalars:
         timestamptz: string
