@@ -227,6 +227,32 @@ pnpm graphql-codegen init
 pnpm gen-types
 ```
 
+### 4. Hasura スキーマの再現（リポジトリ管理）
+
+Hasura のスキーマ（テーブル定義・トラッキング）は `hasura/` 配下に migrations / metadata として管理されています。空の Hasura インスタンスに対して以下で再現できます。
+
+1. Hasura CLI を導入します（検証済みバージョン: v2.48.3）:
+
+```bash
+brew install hasura-cli
+```
+
+2. 接続情報を環境変数で渡します（`.env.local` の値を利用。`HASURA_GRAPHQL_ENDPOINT` はベース URL を指定し、`/v1/graphql` は付けません）:
+
+```bash
+export HASURA_GRAPHQL_ENDPOINT="https://<your-instance>.hasura.app"
+export HASURA_GRAPHQL_ADMIN_SECRET="<your-admin-secret>"
+```
+
+3. スキーマと metadata を適用します:
+
+```bash
+hasura --project hasura migrate apply --database-name default
+hasura --project hasura metadata apply
+```
+
+`hasura/config.yaml` の `endpoint` はプレースホルダー（`http://localhost:8080`）です。実接続は上記環境変数で上書きされるため、リポジトリには実エンドポイント・admin secret を含めません。
+
 ## トラブルシューティングと注意点
 
 ### VS Code 拡張機能
